@@ -1,4 +1,2 @@
-vim-kazarc
-==========
-
-My personal Vim initialization plugin
+My personal Vim initialization plugin. This is a work in progress; I do not
+considered to be in a mature or even stable state.
