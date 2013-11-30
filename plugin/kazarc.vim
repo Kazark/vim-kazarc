@@ -94,8 +94,8 @@ function s:initialize()
         autocmd Filetype cpp     set cindent
         autocmd Filetype cpp     set cinoptions+=g0
         autocmd Filetype cpp     set syntax=cpp11
-        autocmd Filetype text    inoremap --- —
-        autocmd Filetype text    inoremap -- –
+        autocmd Filetype text    inoremap <buffer> --- —
+        autocmd Filetype text    inoremap <buffer> -- –
     augroup end
 
     command -nargs=1 -complete=file Tabv tabe src/<args>.cpp | vs inc/<args>.hpp | sp unittest/<args>Tests.cpp
