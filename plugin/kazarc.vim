@@ -48,6 +48,18 @@ function s:ConfigureSyntastic()
     let g:syntastic_javascript_checkers = ['jshint']
 endfunction
 
+function s:ConfigureDelimitMate()
+    " delimitMate goofs up Vim comments
+    " For now, I'm going to just disable delimitMate's autoclosing in Vim
+    " files. tpope's endiwse is what is really needed for Vimscript anyway.
+    autocmd Filetype vim let b:delimitMate_autoclose=0
+endfunction
+
+function s:ConfigurePlugins()
+    call s:ConfigureSyntastic()
+    call s:ConfigureDelimitMate()
+endfunction
+
 function s:ConfigureForConEmu()
     " Enable 256 color support in ConEmu console emulator
     set term=xterm
@@ -72,7 +84,7 @@ function s:initialize()
     call s:SetupIndenting()
     call s:SetupSearch()
     call s:SelectColorscheme()
-    call s:ConfigureSyntastic()
+    call s:ConfigurePlugins()
 
     filetype plugin on
 
