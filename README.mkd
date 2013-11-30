@@ -1,2 +1,7 @@
 My personal Vim initialization plugin. This is a work in progress; I do not
 considered to be in a mature or even stable state.
+
+My hope in the end is to support multiple operating systems (particularly Linux
+and Windows) and multiple terminals and console emulators within that
+environment, as well as a variety of sets of plugins, etc. So far, it is just
+patched together.
