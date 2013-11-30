@@ -46,7 +46,7 @@ function s:ConfigureDelimitMate()
     " delimitMate goofs up Vim comments
     " For now, I'm going to just disable delimitMate's autoclosing in Vim
     " files. tpope's endiwse is what is really needed for Vimscript anyway.
-    autocmd Filetype vim let b:delimitMate_autoclose=0
+    let g:delimitMate_excluded_ft = "vim"
 endfunction
 
 function s:ConfigurePlugins()
@@ -93,7 +93,10 @@ function s:initialize()
     augroup kazarc
         autocmd Filetype cpp     set cindent
         autocmd Filetype cpp     set cinoptions+=g0
-        autocmd Filetype cpp     set syntax=cpp11
+        autocmd Filetype cpp     set syntax=cpp11 " How to check whether this is available?
+        autocmd BufReadPost *.cpp   if !exists('b:current_syntax') " cpp11 hasn't loaded
+        autocmd BufReadPost *.cpp       set syntax=cpp " so use regular cpp syntax highlighting
+        autocmd BufReadPost *.cpp   endif
         autocmd Filetype text    inoremap <buffer> --- —
         autocmd Filetype text    inoremap <buffer> -- –
     augroup end
