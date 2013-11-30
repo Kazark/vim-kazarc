@@ -6,14 +6,8 @@ if exists('g:kazarc_loaded_plugin')
 endif
 let g:kazarc_loaded_plugin=1
 
-function s:SetTabs(width)
-    let &tabstop=a:width
-    let &shiftwidth=&tabstop
-    let &softtabstop=&tabstop
-endfunction
-
 function s:SetupIndenting()
-    call s:SetTabs(4)
+    call kazarc#SetTabWidthOptionsTo(4)
     filetype plugin indent on
     set autoindent
     set expandtab
