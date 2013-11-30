@@ -39,12 +39,36 @@ function s:SelectColorscheme()
 endfunction
 
 function s:ConfigureSyntastic()
+    let g:syntastic_check_on_open=1
+    " C++11
     let g:syntastic_cpp_include_dirs=['inc']
     let g:syntastic_cpp_compiler_options='-std=c++0x -Werror -Wall'
     let g:syntastic_cpp_check_header=1
+    " Javascript
+    let g:syntastic_javascript_checkers = ['jshint']
+endfunction
+
+function s:ConfigureForConEmu()
+    " Enable 256 color support in ConEmu console emulator
+    set term=xterm
+    set t_Co=256
+    let &t_AB="\e[48;5;%dm"
+    let &t_AF="\e[38;5;%dm"
+endfunction
+
+function s:ConfigureForWindows()
+    " Fix backspace functionality
+    set backspace=indent,eol,start
+    if !empty($CONEMUBUILD)
+        call s:ConfigureForConEmu()
+    endif
 endfunction
 
 function s:initialize()
+    if has("win32")
+        call s:ConfigureForWindows()
+    endif
+
     call s:SetupIndenting()
     call s:SetupSearch()
     call s:SelectColorscheme()
@@ -56,9 +80,9 @@ function s:initialize()
     cabbr <expr> %% expand('%:p:h')
 
     " Enable mouse support in normal mode
-    set mouse=n
+    set mouse=n " Doesn't seem to do anything on Windows (compiled without mouse support?)
 
-    inoremap {<CR> {<CR><CR>}<ESC>kA
+    "inoremap {<CR> {<CR><CR>}<ESC>kA " Better to do this with a plugin?
 
     augroup kazarc
         autocmd Filetype cpp     set cindent
