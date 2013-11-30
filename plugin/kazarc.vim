@@ -13,12 +13,6 @@ function s:SetupIndenting()
     set expandtab
 endfunction
 
-function s:SetupSearch()
-    " Search options
-    set incsearch
-    set hlsearch
-endfunction
-
 function s:SetupFormatting()
     " Comment continuation on following lines
     set formatoptions+=r
@@ -76,7 +70,7 @@ function s:initialize()
     endif
 
     call s:SetupIndenting()
-    call s:SetupSearch()
+    call kazarc#TurnOnFancySearchFeatures()
     call s:SelectColorscheme()
     call s:ConfigurePlugins()
 
@@ -86,9 +80,7 @@ function s:initialize()
     cabbr <expr> %% expand('%:p:h')
 
     " Enable mouse support in normal mode
-    set mouse=n " Doesn't seem to do anything on Windows (compiled without mouse support?)
-
-    "inoremap {<CR> {<CR><CR>}<ESC>kA " Better to do this with a plugin?
+    set mouse=n " Doesn't seem to do anything on Windows
 
     augroup kazarc
         autocmd Filetype cpp     set cindent

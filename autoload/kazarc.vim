@@ -7,3 +7,8 @@ function kazarc#SetTabWidthOptionsTo(width)
     let &softtabstop=&tabstop
 endfunction
 
+function kazarc#TurnOnFancySearchFeatures()
+    set incsearch
+    set hlsearch
+endfunction
+
