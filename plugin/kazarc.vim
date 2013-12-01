@@ -61,7 +61,6 @@ endfunction
 
 function s:ConfigureForWindows()
     " Fix backspace functionality
-    set backspace=indent,eol,start
     if !empty($CONEMUBUILD)
         call s:ConfigureForConEmu()
     endif
@@ -81,6 +80,7 @@ function s:initialize()
     call s:SetUpColors()
     call s:ConfigurePlugins()
     call s:SetUpFormatting()
+    call kazarc#MakeBackspaceFullyFunctional()
 
     filetype plugin on
 

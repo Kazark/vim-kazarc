@@ -22,3 +22,7 @@ endfunction
 function kazarc#ConfigureForCygwin()
     call kazarc#SetBlockCursorInNormalMode()
 endfunction
+
+function kazarc#MakeBackspaceFullyFunctional()
+    set backspace=indent,eol,start
+endfunction
