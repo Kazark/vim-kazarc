@@ -21,8 +21,9 @@ function s:SetUpFormatting()
     set formatoptions+=n
 endfunction
 
-function s:SelectColorscheme()
-    if $TERM == "xterm"
+function s:SetUpColors()
+    syntax on
+    if &term == "xterm"
         set t_Co=256
     endif
     colorscheme jellybeans
@@ -71,9 +72,13 @@ function s:initialize()
         call s:ConfigureForWindows()
     endif
 
+    if system('uname -o') == "Cygwin\n"
+        call kazarc#ConfigureForCygwin()
+    endif
+
     call s:SetupIndenting()
     call kazarc#TurnOnFancySearchFeatures()
-    call s:SelectColorscheme()
+    call s:SetUpColors()
     call s:ConfigurePlugins()
     call s:SetUpFormatting()
 
@@ -86,14 +91,22 @@ function s:initialize()
     set mouse=n " Doesn't seem to do anything on Windows
 
     augroup kazarc
+        " C++
         autocmd Filetype cpp     set cindent
         autocmd Filetype cpp     set cinoptions+=g0
         autocmd Filetype cpp     set syntax=cpp11 " How to check whether this is available?
         autocmd BufReadPost *.cpp   if !exists('b:current_syntax') " cpp11 hasn't loaded
         autocmd BufReadPost *.cpp       set syntax=cpp " so use regular cpp syntax highlighting
         autocmd BufReadPost *.cpp   endif
+        " Plain text
         autocmd Filetype text    inoremap <buffer> --- —
         autocmd Filetype text    inoremap <buffer> -- –
+        " Markdown
+        autocmd BufEnter,BufNew *.md setfiletype markdown
+        autocmd BufEnter,BufNew *.mkd setfiletype markdown
+        autocmd Filetype markdown set spell
+        autocmd Filetype markdown set nojoinspaces
+        autocmd Filetype markdown set textwidth=80
     augroup end
 
     command -nargs=1 -complete=file Tabv tabe src/<args>.cpp | vs inc/<args>.hpp | sp unittest/<args>Tests.cpp
