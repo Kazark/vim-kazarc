@@ -13,10 +13,12 @@ function s:SetupIndenting()
     set expandtab
 endfunction
 
-function s:SetupFormatting()
+function s:SetUpFormatting()
     " Comment continuation on following lines
     set formatoptions+=r
     set formatoptions+=o
+    " Recognize numbered lists
+    set formatoptions+=n
 endfunction
 
 function s:SelectColorscheme()
@@ -73,6 +75,7 @@ function s:initialize()
     call kazarc#TurnOnFancySearchFeatures()
     call s:SelectColorscheme()
     call s:ConfigurePlugins()
+    call s:SetUpFormatting()
 
     filetype plugin on
 
