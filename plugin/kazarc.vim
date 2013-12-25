@@ -29,14 +29,20 @@ augroup kazarc
     autocmd BufReadPost *.cpp       set syntax=cpp " so use regular cpp syntax highlighting
     autocmd BufReadPost *.cpp   endif
     " Plain text
-    autocmd Filetype text    inoremap <buffer> --- —
-    autocmd Filetype text    inoremap <buffer> -- –
+    autocmd BufEnter,BufNew *.txt setfiletype text
+    autocmd BufEnter,BufNew *.text setfiletype text
+    autocmd Filetype text inoremap <buffer> --- —
+    autocmd Filetype text inoremap <buffer> -- –
+    autocmd Filetype text set textwidth=80
+    autocmd Filetype text set spell
+    autocmd Filetype text set nojoinspaces
     " Markdown
     autocmd BufEnter,BufNew *.md setfiletype markdown
     autocmd BufEnter,BufNew *.mkd setfiletype markdown
     autocmd Filetype markdown set spell
     autocmd Filetype markdown set nojoinspaces
     autocmd Filetype markdown set textwidth=80
+    autocmd Filetype markdown setlocal formatoptions-=t
 augroup end
 
 command -nargs=1 -complete=file Tabv tabe src/<args>.cpp | vs inc/<args>.hpp | sp unittest/<args>Tests.cpp
