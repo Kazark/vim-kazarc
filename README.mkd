@@ -1,7 +1,19 @@
-My personal Vim initialization plugin. This is a work in progress; I do not
-considered to be in a mature or even stable state.
+This is my personal Vim initialization plugin; I haven't been trying to build it
+in a highly configurable way. Rather, it is my configuration. Still, feel free
+to give it a try.
+
+This is a work in progress; I do not considered to be in a mature or even stable
+state.
 
 My hope in the end is to support multiple operating systems (particularly Linux
 and Windows) and multiple terminals and console emulators within that
 environment, as well as a variety of sets of plugins, etc. So far, it is just
 patched together.
+
+### Initial Sketch of Features 
++ Text and markdown files have spelling and auto text wrapping turned on.
++ All tabbing is set up to consistently use four spaces, with backspacing enable
+  in all environments.
++ Use a block cursor in normal mode for the Cygwin terminal
++ Incremental searching with highlighting
++ Some configurations for certain other plugins
