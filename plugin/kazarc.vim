@@ -42,7 +42,8 @@ augroup kazarc
     autocmd Filetype markdown set spell
     autocmd Filetype markdown set nojoinspaces
     autocmd Filetype markdown set textwidth=80
-    autocmd Filetype markdown setlocal formatoptions-=t
+    " Git commit messages
+    autocmd Filetype gitcommit setlocal formatoptions-=t
 augroup end
 
 command -nargs=1 -complete=file Tabv tabe src/<args>.cpp | vs inc/<args>.hpp | sp unittest/<args>Tests.cpp
