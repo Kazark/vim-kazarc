@@ -22,26 +22,27 @@ set mouse=n " Doesn't seem to do anything on Windows
 
 augroup kazarc
     " C++
-    autocmd Filetype cpp     set cindent
-    autocmd Filetype cpp     set cinoptions+=g0
-    autocmd Filetype cpp     set syntax=cpp11 " How to check whether this is available?
-    autocmd BufReadPost *.cpp   if !exists('b:current_syntax') " cpp11 hasn't loaded
-    autocmd BufReadPost *.cpp       set syntax=cpp " so use regular cpp syntax highlighting
-    autocmd BufReadPost *.cpp   endif
+    autocmd Filetype cpp setlocal cindent
+    autocmd Filetype cpp setlocal cinoptions+=g0
+    autocmd Filetype cpp setlocal syntax=cpp11 " How to check whether this is available?
+    autocmd BufReadPost *.cpp if !exists('b:current_syntax') " cpp11 hasn't loaded
+    autocmd BufReadPost *.cpp     set syntax=cpp " so use regular cpp syntax highlighting
+    autocmd BufReadPost *.cpp endif
     " Plain text
-    autocmd BufEnter,BufNew *.txt setfiletype text
     autocmd BufEnter,BufNew *.text setfiletype text
     autocmd Filetype text inoremap <buffer> --- —
     autocmd Filetype text inoremap <buffer> -- –
-    autocmd Filetype text set textwidth=80
-    autocmd Filetype text set spell
-    autocmd Filetype text set nojoinspaces
+    autocmd Filetype text setlocal textwidth=80
+    autocmd Filetype text setlocal spell
+    autocmd Filetype text setlocal nojoinspaces
+    autocmd Filetype help setlocal nospell
     " Markdown
     autocmd BufEnter,BufNew *.md setfiletype markdown
     autocmd BufEnter,BufNew *.mkd setfiletype markdown
-    autocmd Filetype markdown set spell
-    autocmd Filetype markdown set nojoinspaces
-    autocmd Filetype markdown set textwidth=80
+    autocmd Filetype markdown setlocal spell
+    autocmd Filetype markdown setlocal nojoinspaces
+    autocmd Filetype markdown setlocal textwidth=80
+    autocmd Filetype markdown setlocal softtabstop=2
     " Git commit messages
     autocmd Filetype gitcommit setlocal formatoptions-=t
 augroup end

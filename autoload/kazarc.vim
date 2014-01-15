@@ -6,12 +6,6 @@ if exists('g:kazarc_loaded')
 endif
 let g:kazarc_loaded=1
 
-function kazarc#SetTabWidthOptionsTo(width)
-    let &tabstop=a:width
-    let &shiftwidth=&tabstop
-    let &softtabstop=&tabstop
-endfunction
-
 function kazarc#TurnOnFancySearchFeatures()
     set incsearch
     set hlsearch
@@ -83,7 +77,9 @@ function kazarc#ConfigureForWindows()
 endfunction
 
 function kazarc#SetUpIndenting()
-    call kazarc#SetTabWidthOptionsTo(4)
+    set tabstop=4
+    set shiftwidth=4
+    set softtabstop=1
     filetype plugin indent on
     set autoindent
     set expandtab
