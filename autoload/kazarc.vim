@@ -76,10 +76,14 @@ function kazarc#ConfigureForWindows()
     endif
 endfunction
 
+function kazarc#SetTabWidthOptionsTo(width)
+    let &tabstop=a:width
+    let &shiftwidth=&tabstop
+    let &softtabstop=&tabstop
+endfunction
+
 function kazarc#SetUpIndenting()
-    set tabstop=4
-    set shiftwidth=4
-    set softtabstop=1
+    call kazarc#SetTabWidthOptionsTo(4)
     filetype plugin indent on
     set autoindent
     set expandtab
