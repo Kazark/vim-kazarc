@@ -39,6 +39,8 @@ augroup kazarc
     " Markdown
     autocmd BufEnter,BufNew *.md setfiletype markdown
     autocmd BufEnter,BufNew *.mkd setfiletype markdown
+    autocmd Filetype markdown inoremap <buffer> --- —
+    autocmd Filetype markdown inoremap <buffer> -- –
     autocmd Filetype markdown setlocal spell
     autocmd Filetype markdown setlocal nojoinspaces
     autocmd Filetype markdown setlocal textwidth=80
