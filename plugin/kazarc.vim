@@ -16,6 +16,7 @@ call kazarc#MakeBackspaceFullyFunctional()
 
 set autowrite
 cabbr <expr> %% expand('%:p:h')
+set diffopt=iwhite
 
 " Enable mouse support in normal mode
 set mouse=n " Doesn't seem to do anything on Windows
@@ -47,6 +48,8 @@ augroup kazarc
     autocmd Filetype markdown setlocal softtabstop=2
     " Git commit messages
     autocmd Filetype gitcommit setlocal formatoptions-=t
+    " Windows resource XML files
+    autocmd BufEnter,BufNew *.resx setfiletype xml
 augroup end
 
 command -nargs=1 -complete=file Tabv tabe src/<args>.cpp | vs inc/<args>.hpp | sp unittest/<args>Tests.cpp
