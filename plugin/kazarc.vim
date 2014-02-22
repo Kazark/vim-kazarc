@@ -51,5 +51,3 @@ augroup kazarc
     " Windows resource XML files
     autocmd BufEnter,BufNew *.resx setfiletype xml
 augroup end
-
-command -nargs=1 -complete=file Tabv tabe src/<args>.cpp | vs inc/<args>.hpp | sp unittest/<args>Tests.cpp
