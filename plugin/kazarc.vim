@@ -30,7 +30,7 @@ augroup kazarc
     autocmd BufReadPost *.cpp     set syntax=cpp " so use regular cpp syntax highlighting
     autocmd BufReadPost *.cpp endif
     " Plain text
-    autocmd BufEnter,BufNew *.text setfiletype text
+    autocmd BufEnter,BufNewFile *.text setfiletype text
     autocmd Filetype text inoremap <buffer> --- —
     autocmd Filetype text inoremap <buffer> -- –
     autocmd Filetype text setlocal textwidth=80
@@ -38,8 +38,8 @@ augroup kazarc
     autocmd Filetype text setlocal nojoinspaces
     autocmd Filetype help setlocal nospell
     " Markdown
-    autocmd BufEnter,BufNew *.md setfiletype markdown
-    autocmd BufEnter,BufNew *.mkd setfiletype markdown
+    autocmd BufEnter,BufNewFile *.md setfiletype markdown
+    autocmd BufEnter,BufNewFile *.mkd setfiletype markdown
     autocmd Filetype markdown inoremap <buffer> --- —
     autocmd Filetype markdown inoremap <buffer> -- –
     autocmd Filetype markdown setlocal spell
@@ -49,5 +49,5 @@ augroup kazarc
     " Git commit messages
     autocmd Filetype gitcommit setlocal formatoptions-=t
     " Windows resource XML files
-    autocmd BufEnter,BufNew *.resx setfiletype xml
+    autocmd BufEnter,BufNewFile *.resx setfiletype xml
 augroup end
