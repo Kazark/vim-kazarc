@@ -74,6 +74,8 @@ function kazarc#ConfigureForWindows()
     if !empty($CONEMUBUILD)
         call kazarc#ConfigureForConEmu()
     endif
+    " Default encoding to UTF-8
+    set encoding=utf-8
 endfunction
 
 function kazarc#SetTabWidthOptionsTo(width)
