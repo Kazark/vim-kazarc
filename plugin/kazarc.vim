@@ -48,6 +48,7 @@ augroup kazarc
     autocmd Filetype markdown setlocal softtabstop=2
     " Git commit messages
     autocmd Filetype gitcommit setlocal formatoptions-=t
+    autocmd Filetype gitcommit setlocal spell
     " Windows resource XML files
     autocmd BufEnter,BufNewFile *.resx setfiletype xml
     " Vader (Vim unit testing)
