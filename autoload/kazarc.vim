@@ -84,6 +84,12 @@ function kazarc#SetTabWidthOptionsTo(width)
     let &softtabstop=&tabstop
 endfunction
 
+function kazarc#SetLocalTabWidthOptionsTo(width)
+    execute "setlocal tabstop=" . a:width
+    execute "setlocal shiftwidth=" . a:width
+    execute "setlocal softtabstop=" . a:width
+endfunction
+
 function kazarc#SetUpIndenting()
     call kazarc#SetTabWidthOptionsTo(4)
     filetype plugin indent on

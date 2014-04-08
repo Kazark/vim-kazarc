@@ -50,4 +50,6 @@ augroup kazarc
     autocmd Filetype gitcommit setlocal formatoptions-=t
     " Windows resource XML files
     autocmd BufEnter,BufNewFile *.resx setfiletype xml
+    " Vader (Vim unit testing)
+    autocmd Filetype vader call kazarc#SetLocalTabWidthOptionsTo(2)
 augroup end
