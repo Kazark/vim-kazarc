@@ -76,6 +76,8 @@ function kazarc#ConfigureForWindows()
     endif
     " Default encoding to UTF-8
     set encoding=utf-8
+    " Vim on Linux does not do well with DOS formatted files
+    autocmd BufNewFile *.vim set fileformat=unix
 endfunction
 
 function kazarc#SetTabWidthOptionsTo(width)
