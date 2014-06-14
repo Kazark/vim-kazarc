@@ -53,4 +53,7 @@ augroup kazarc
     autocmd BufEnter,BufNewFile *.resx setfiletype xml
     " Vader (Vim unit testing)
     autocmd Filetype vader call kazarc#SetLocalTabWidthOptionsTo(2)
+    " JavaScript fragments (e.g. intro and outro for concatentation)
+    autocmd BufEnter,BufNewFile *.js.frag setfiletype jsfragment
+    autocmd Filetype jsfragment setlocal syntax=javascript
 augroup end
