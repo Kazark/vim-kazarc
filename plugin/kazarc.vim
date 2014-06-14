@@ -21,6 +21,9 @@ set diffopt=iwhite
 " Enable mouse support in normal mode
 set mouse=n " Doesn't seem to do anything on Windows
 
+" Go(lang) Vim runtime path
+set runtimepath+=$GOROOT/misc/vim
+
 augroup kazarc
     " C++
     autocmd Filetype cpp setlocal cindent
