@@ -59,4 +59,6 @@ augroup kazarc
     " JavaScript fragments (e.g. intro and outro for concatentation)
     autocmd BufEnter,BufNewFile *.js.frag setfiletype jsfragment
     autocmd Filetype jsfragment setlocal syntax=javascript
+    " Golang
+    autocmd BufNewFile,BufRead *.go setfiletype go " Needed on some machines, depending on how Go is installed
 augroup end
