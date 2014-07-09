@@ -52,6 +52,8 @@ augroup kazarc
     " Git commit messages
     autocmd Filetype gitcommit setlocal formatoptions-=t
     autocmd Filetype gitcommit setlocal spell
+    " Git ignore files
+    autocmd BufEnter,BufNewFile .gitignore setfiletype conf
     " Windows resource XML files
     autocmd BufEnter,BufNewFile *.resx setfiletype xml
     " Vader (Vim unit testing)
