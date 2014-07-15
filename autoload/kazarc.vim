@@ -78,6 +78,10 @@ function kazarc#ConfigureForWindows()
     set encoding=utf-8
     " Vim on Linux does not do well with DOS formatted files
     autocmd BufNewFile *.vim set fileformat=unix
+    if has("gui_running")
+        set guifont=Consolas:h11:cANSI
+        set guioptions-=rL "Don't display scrollbars
+    endif
 endfunction
 
 function kazarc#SetTabWidthOptionsTo(width)
