@@ -51,7 +51,7 @@ endfunction
 function kazarc#ConfigureDelimitMate()
     " delimitMate goofs up Vim comments
     " For now, I'm going to just disable delimitMate's autoclosing in Vim
-    " files. tpope's endiwse is what is really needed for Vimscript anyway.
+    " files. tpope's endwise is what is really needed for VimScript anyway.
     let g:delimitMate_excluded_ft = "vim"
 endfunction
 
@@ -101,14 +101,6 @@ function kazarc#SetUpIndenting()
     filetype plugin indent on
     set autoindent
     set expandtab
-endfunction
-
-function kazarc#SetUpFormatting()
-    " Comment continuation on following lines
-    set formatoptions+=r
-    set formatoptions+=o
-    " Recognize numbered lists
-    set formatoptions+=n
 endfunction
 
 function kazarc#ConfigureForPlatform()

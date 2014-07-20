@@ -11,7 +11,6 @@ call kazarc#SetUpIndenting()
 call kazarc#TurnOnFancySearchFeatures()
 call kazarc#SetUpColors()
 call kazarc#ConfigurePlugins()
-call kazarc#SetUpFormatting()
 call kazarc#MakeBackspaceFullyFunctional()
 
 set autowrite
@@ -29,6 +28,8 @@ augroup kazarc
     autocmd Filetype cpp setlocal cindent
     autocmd Filetype cpp setlocal cinoptions+=g0
     autocmd Filetype cpp setlocal syntax=cpp11 " How to check whether this is available?
+    autocmd Filetype cpp set formatoptions+=o " Comment continuation on following lines
+    autocmd Filetype cpp set formatoptions+=r " Comment continuation on following lines
     autocmd BufReadPost *.cpp if !exists('b:current_syntax') " cpp11 hasn't loaded
     autocmd BufReadPost *.cpp     set syntax=cpp " so use regular cpp syntax highlighting
     autocmd BufReadPost *.cpp endif
@@ -37,8 +38,9 @@ augroup kazarc
     autocmd Filetype text inoremap <buffer> --- —
     autocmd Filetype text inoremap <buffer> -- –
     autocmd Filetype text setlocal textwidth=80
-    autocmd Filetype text setlocal spell
+    autocmd Filetype text setlocal formatoptions+=n " Recognize numbered lists
     autocmd Filetype text setlocal nojoinspaces
+    autocmd Filetype text setlocal spell
     autocmd Filetype help setlocal nospell
     " Markdown
     autocmd BufEnter,BufNewFile *.md setfiletype markdown
@@ -49,7 +51,9 @@ augroup kazarc
     autocmd Filetype markdown setlocal nojoinspaces
     autocmd Filetype markdown setlocal textwidth=80
     autocmd Filetype markdown setlocal softtabstop=2
+    autocmd Filetype markdown setlocal formatoptions+=n " Recognize numbered lists
     " Git commit messages
+    autocmd Filetype gitcommit setlocal formatoptions+=n " Recognize numbered lists
     autocmd Filetype gitcommit setlocal formatoptions-=t
     autocmd Filetype gitcommit setlocal spell
     " Git ignore files
