@@ -34,7 +34,6 @@ augroup kazarc
     autocmd BufReadPost *.cpp     set syntax=cpp " so use regular cpp syntax highlighting
     autocmd BufReadPost *.cpp endif
     " Plain text
-    autocmd BufEnter,BufNewFile *.text setfiletype text
     autocmd Filetype text inoremap <buffer> --- —
     autocmd Filetype text inoremap <buffer> -- –
     autocmd Filetype text setlocal textwidth=80
@@ -56,15 +55,8 @@ augroup kazarc
     autocmd Filetype gitcommit setlocal formatoptions+=n " Recognize numbered lists
     autocmd Filetype gitcommit setlocal formatoptions-=t
     autocmd Filetype gitcommit setlocal spell
-    " Git ignore files
-    autocmd BufEnter,BufNewFile .gitignore setfiletype conf
-    " Windows resource XML files
-    autocmd BufEnter,BufNewFile *.resx setfiletype xml
     " Vader (Vim unit testing)
     autocmd Filetype vader call kazarc#SetLocalTabWidthOptionsTo(2)
     " JavaScript fragments (e.g. intro and outro for concatentation)
-    autocmd BufEnter,BufNewFile *.js.frag setfiletype jsfragment
     autocmd Filetype jsfragment setlocal syntax=javascript
-    " Golang
-    autocmd BufNewFile,BufRead *.go setfiletype go " Needed on some machines, depending on how Go is installed
 augroup end
