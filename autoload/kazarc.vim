@@ -78,9 +78,15 @@ function kazarc#ConfigureForWindows()
     set encoding=utf-8
     " Vim on Linux does not do well with DOS formatted files
     autocmd BufNewFile *.vim set fileformat=unix
+    " Configure GVim for Windows
     if has("gui_running")
         set guifont=Consolas:h11:cANSI
         set guioptions-=rL "Don't display scrollbars
+    endif
+    " Default to SQL Server syntax highlighting for *.sql files if SQL Server
+    " is installed. Requires https://github.com/hoffstein/vim-tsql to work
+    if isdirectory('C:/Program Files/Microsoft SQL Server')
+        let g:sql_type_default = "sqlserver"
     endif
 endfunction
 
