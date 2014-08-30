@@ -69,6 +69,13 @@ function kazarc#ConfigureForConEmu()
     let &t_AF="\e[38;5;%dm"
 endfunction
 
+function kazarc#ConfigureForLinux()
+    if $COLORTERM == 'gnome-terminal'
+        set t_ZH=[3m
+        set t_ZR=[23m
+    endif
+endfunction
+
 function kazarc#ConfigureForWindows()
     " Fix backspace functionality
     if !empty($CONEMUBUILD)
@@ -113,7 +120,10 @@ function kazarc#ConfigureForPlatform()
     if has("win32")
         call kazarc#ConfigureForWindows()
     endif
-    if system('uname -o') == "Cygwin\n"
+    let l:uname = system('uname -o')
+    if l:uname == "Cygwin\n"
         call kazarc#ConfigureForCygwin()
+    elseif l:uname == "GNU/Linux\n"
+        call kazarc#ConfigureForLinux()
     endif
 endfunction
