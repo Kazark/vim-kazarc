@@ -22,6 +22,9 @@ set mouse=n " Doesn't seem to do anything on Windows
 " Go(lang) Vim runtime path
 set runtimepath+=$GOROOT/misc/vim
 
+" Why hold down the shift key? The default mapping of ; is not very useful
+nmap ; :
+
 augroup kazark
     " C++ syntax highlighting; default to C++11
     autocmd Filetype cpp setlocal syntax=cpp11 " How to check whether this is available?
