@@ -12,6 +12,7 @@ call kazarc#TurnOnFancySearchFeatures()
 call kazarc#SetUpColors()
 call kazarc#ConfigurePlugins()
 call kazarc#MakeBackspaceFullyFunctional()
+call kazarc#HideToolAndMenuBarInGUI()
 
 set autowrite " So `:make`, `:cnfile`, etc, are easier to use
 set diffopt=iwhite " To my mind, this should be opt-in instead of opt-out

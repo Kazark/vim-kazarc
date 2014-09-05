@@ -76,6 +76,12 @@ function kazarc#ConfigureForLinux()
     endif
 endfunction
 
+function kazarc#HideToolAndMenuBarInGUI()
+    " Another case of should be opt-in instead of opt-out
+    set guioptions-=m
+    set guioptions-=T
+endfunction
+
 function kazarc#ConfigureForWindows()
     " Fix backspace functionality
     if !empty($CONEMUBUILD)
@@ -88,7 +94,8 @@ function kazarc#ConfigureForWindows()
     " Configure GVim for Windows
     if has("gui_running")
         set guifont=Consolas:h11:cANSI
-        set guioptions-=rL "Don't display scrollbars
+        set guioptions-=r "Don't display scrollbars
+        set guioptions-=L "Don't display scrollbars
     endif
     " Default to SQL Server syntax highlighting for *.sql files if SQL Server
     " is installed. Requires https://github.com/hoffstein/vim-tsql to work
