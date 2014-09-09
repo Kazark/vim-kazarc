@@ -93,7 +93,7 @@ function kazarc#ConfigureForWindows()
     autocmd BufNewFile *.vim set fileformat=unix
     " Configure GVim for Windows
     if has("gui_running")
-        set guifont=Consolas:h11:cANSI
+        set guifont=Consolas:h10:cANSI
         set guioptions-=r "Don't display scrollbars
         set guioptions-=L "Don't display scrollbars
     endif
