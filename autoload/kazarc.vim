@@ -134,3 +134,20 @@ function kazarc#ConfigureForPlatform()
         call kazarc#ConfigureForLinux()
     endif
 endfunction
+
+function kazarc#DeleteBufferAndNotify(bufferNumber, message)
+    execute "bdelete " . a:bufferNumber
+    diffoff " Turn diffing off in the other buffer
+     " If I use :echomsg it redraws the screen before I can see the message
+    call input(a:message . ' (press ENTER to continue)')
+endfunction
+
+function kazarc#IfStartedInDiffModeCloseNulGitBufferIfAny()
+    if &diff && tabpagenr('$') == 1 && len(tabpagebuflist(1)) == 2
+        if bufname(1) == '\\.\nul'
+            call kazarc#DeleteBufferAndNotify(1, 'Nothing to compare against; file is newly added')
+        elseif bufname(2) == '\\.\nul'
+            call kazarc#DeleteBufferAndNotify(2, 'Nothing to compare against; file has been deleted')
+        endif
+    endif
+endfunction

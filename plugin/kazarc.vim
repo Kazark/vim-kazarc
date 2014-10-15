@@ -34,4 +34,6 @@ augroup kazark
     autocmd BufReadPost *.cpp endif
     " JavaScript fragments (e.g. intro.js.frag)
     autocmd Filetype jsfragment setlocal syntax=javascript
+    " Leave diff mode when using Git if file has no corresponding file to diff with
+    autocmd VimEnter * call kazarc#IfStartedInDiffModeCloseNulGitBufferIfAny()
 augroup end
