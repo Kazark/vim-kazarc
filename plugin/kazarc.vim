@@ -25,6 +25,11 @@ set runtimepath+=$GOROOT/misc/vim
 
 " Why hold down the shift key? The default mapping of ; is not very useful
 nmap ; :
+vmap ; :
+
+" I select everything in a file far more than I increment an integer! Why not
+" make CTRL-A do what it does in almost every other program?
+nmap <C-a> ggVG
 
 augroup kazark
     " C++ syntax highlighting; default to C++11
