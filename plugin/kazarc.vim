@@ -31,6 +31,10 @@ vmap ; :
 " make CTRL-A do what it does in almost every other program?
 nmap <C-a> ggVG
 
+" CTRL-C doesn't do anything valuable in Normal mode. Why not map it to what
+" it does in almost every other program?
+nmap <C-c> "+y
+
 augroup kazark
     " C++ syntax highlighting; default to C++11
     autocmd Filetype cpp setlocal syntax=cpp11 " How to check whether this is available?
