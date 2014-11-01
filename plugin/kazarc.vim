@@ -14,6 +14,8 @@ call kazarc#ConfigurePlugins()
 call kazarc#MakeBackspaceFullyFunctional()
 call kazarc#HideToolAndMenuBarInGUI()
 
+let mapleader=","
+
 set autowrite " So `:make`, `:cnfile`, etc, are easier to use
 set diffopt=iwhite " To my mind, this should be opt-in instead of opt-out
 
@@ -27,13 +29,39 @@ set runtimepath+=$GOROOT/misc/vim
 nmap ; :
 vmap ; :
 
+" Screw Vi-compatibility; let's make sense around here
+" From http://vimrcfu.com/snippet/88
+map Y y$
+
+" Neovim is going to kill Ex mode. That means, as far as I'm concerned, Q is
+" free. And :noh is a perennial nuisance...
+nnoremap Q :nohlsearch<ESC>
+
+" From http://vimrcfu.com/snippet/14
+" "It's stupid that indenting or unindenting a visual block deselects the
+" block. Automatically 'gv' (go to previously selected visual block) after
+" indenting or unindenting." --@dwieeb
+vnoremap < <gv
+vnoremap > >gv
+
+" From http://vimrcfu.com/snippet/106
+nnoremap <Tab> >>
+nnoremap <S-Tab> <LT><LT>
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <LT>gv
+
+" Thought I would try this out
+" http://vimrcfu.com/snippet/96
+set splitbelow " new horizontal splits go below
+set splitright " new vertical splits go right
+
 " I select everything in a file far more than I increment an integer! Why not
 " make CTRL-A do what it does in almost every other program?
 nmap <C-a> ggVG
 
 " CTRL-C doesn't do anything valuable in Normal mode. Why not map it to what
 " it does in almost every other program?
-nmap <C-c> "+y
+vmap <C-c> "+y
 
 augroup kazark
     " C++ syntax highlighting; default to C++11
