@@ -22,6 +22,9 @@ set diffopt=iwhite " To my mind, this should be opt-in instead of opt-out
 " Enable mouse support in normal mode
 set mouse=n " Doesn't seem to do anything on Windows
 
+" Make sure we get column and row displayed
+set ruler
+
 " Go(lang) Vim runtime path
 set runtimepath+=$GOROOT/misc/vim
 
