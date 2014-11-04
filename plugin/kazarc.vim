@@ -53,11 +53,6 @@ nnoremap <S-Tab> <LT><LT>
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <LT>gv
 
-" Thought I would try this out
-" http://vimrcfu.com/snippet/96
-set splitbelow " new horizontal splits go below
-set splitright " new vertical splits go right
-
 " I select everything in a file far more than I increment an integer! Why not
 " make CTRL-A do what it does in almost every other program?
 nmap <C-a> ggVG
@@ -65,6 +60,16 @@ nmap <C-a> ggVG
 " CTRL-C doesn't do anything valuable in Normal mode. Why not map it to what
 " it does in almost every other program?
 vmap <C-c> "+y
+
+" Like ZZ and ZQ...
+nmap ZA :qa<CR>
+
+" Underscore-related motions
+map ,w f_l
+map ,b hT_
+map ,e lt_
+omap u t_
+omap U f_
 
 augroup kazark
     " C++ syntax highlighting; default to C++11
