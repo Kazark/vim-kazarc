@@ -65,9 +65,9 @@ vmap <C-c> "+y
 nmap ZA :qa<CR>
 
 " Underscore-related motions
-map ,w f_l
-map ,b hT_
-map ,e lt_
+map <leader>w f_l
+map <leader>b hT_
+map <leader>e lt_
 omap u t_
 omap U f_
 
