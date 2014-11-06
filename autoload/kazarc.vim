@@ -151,3 +151,7 @@ function kazarc#IfStartedInDiffModeCloseNulGitBufferIfAny()
         endif
     endif
 endfunction
+
+function kazarc#IsCurrentBufferVimDoc()
+    return match(expand('%:p'), escape(expand(split(&runtimepath, ',')[0]), ' \')) == 0
+endfunction

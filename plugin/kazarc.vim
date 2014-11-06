@@ -17,6 +17,7 @@ call kazarc#HideToolAndMenuBarInGUI()
 let mapleader=","
 
 set autowrite " So `:make`, `:cnfile`, etc, are easier to use
+set autoread " Why prompt unless there is danger of loosing something?
 set diffopt=iwhite " To my mind, this should be opt-in instead of opt-out
 
 " Enable mouse support in normal mode
@@ -71,7 +72,7 @@ map <leader>e lt_
 omap u t_
 omap U f_
 
-augroup kazark
+augroup kazarc
     " C++ syntax highlighting; default to C++11
     autocmd Filetype cpp setlocal syntax=cpp11 " How to check whether this is available?
     autocmd BufReadPost *.cpp if !exists('b:current_syntax') " cpp11 hasn't loaded
