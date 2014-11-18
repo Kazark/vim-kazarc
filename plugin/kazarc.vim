@@ -39,7 +39,7 @@ map Y y$
 
 " Neovim is going to kill Ex mode. That means, as far as I'm concerned, Q is
 " free. And :noh is a perennial nuisance...
-nnoremap Q :nohlsearch<ESC>
+nnoremap Q :nohlsearch<CR>
 
 " From http://vimrcfu.com/snippet/14
 " "It's stupid that indenting or unindenting a visual block deselects the
