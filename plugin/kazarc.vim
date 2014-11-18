@@ -61,6 +61,9 @@ nmap <C-a> ggVG
 " CTRL-C doesn't do anything valuable in Normal mode. Why not map it to what
 " it does in almost every other program?
 vmap <C-c> "+y
+" Similarly, while I do not want to overwrite the mapping of control v (it's
+" default Vim behavior is too valuable), why not create something similar?
+map <leader><C-v> "+p
 
 " Like ZZ and ZQ...
 nmap ZA :qa<CR>
