@@ -75,6 +75,9 @@ map <leader>e lt_
 omap u t_
 omap U f_
 
+" Map s to surround in visual mode from Tim Pope's Surround plugin
+xmap s <Plug>VSurround
+
 augroup kazarc
     " C++ syntax highlighting; default to C++11
     autocmd Filetype cpp setlocal syntax=cpp11 " How to check whether this is available?
