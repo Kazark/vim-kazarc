@@ -26,6 +26,10 @@ set mouse=n " Doesn't seem to do anything on Windows
 " Make sure we get column and row displayed
 set ruler
 
+" So you don't have to use \c while searching. Seems like a good idea. I'll
+" try it out.
+set ignorecase smartcase
+
 " Go(lang) Vim runtime path
 set runtimepath+=$GOROOT/misc/vim
 
@@ -58,9 +62,11 @@ vnoremap <S-Tab> <LT>gv
 " make CTRL-A do what it does in almost every other program?
 nmap <C-a> ggVG
 
-" CTRL-C doesn't do anything valuable in Normal mode. Why not map it to what
-" it does in almost every other program?
+" CTRL-C doesn't do anything valuable in Normal or Visual mode. Why not map it
+" to what it does in almost every other program (CUA)?
 vmap <C-c> "+y
+nmap <C-c> "+yy
+
 " Similarly, while I do not want to overwrite the mapping of control v (it's
 " default Vim behavior is too valuable), why not create something similar?
 map <leader><C-v> "+p
@@ -77,6 +83,13 @@ omap U f_
 
 " Map s to surround in visual mode from Tim Pope's Surround plugin
 xmap s <Plug>VSurround
+" One of the most common things I do with Surround is to surround a single
+" word with ` in a Markdown file
+nmap <leader>` ves`<Esc>
+
+" Tab mappings analogous to window mappings where <leader>t is like <C-w>
+map <leader>tc :tabclose<CR>
+map <leader>tn :tabnew<CR>
 
 augroup kazarc
     " C++ syntax highlighting; default to C++11
