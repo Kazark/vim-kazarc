@@ -43,7 +43,7 @@ map Y y$
 
 " Neovim is going to kill Ex mode. That means, as far as I'm concerned, Q is
 " free. And :noh is a perennial nuisance...
-nnoremap Q :nohlsearch<CR>
+nnoremap <silent> Q :nohlsearch<CR>
 
 " From http://vimrcfu.com/snippet/14
 " "It's stupid that indenting or unindenting a visual block deselects the
@@ -72,7 +72,7 @@ nmap <C-c> "+yy
 map <leader><C-v> "+p
 
 " Like ZZ and ZQ...
-nmap ZA :qa<CR>
+nmap <silent> ZA :qa<CR>
 
 " Underscore-related motions
 map <leader>w f_l
@@ -88,8 +88,8 @@ xmap s <Plug>VSurround
 nmap <leader>` ves`<Esc>
 
 " Tab mappings analogous to window mappings where <leader>t is like <C-w>
-map <leader>tc :tabclose<CR>
-map <leader>tn :tabnew<CR>
+map <silent> <leader>tc :tabclose<CR>
+map <silent> <leader>tn :tabnew<CR>
 
 augroup kazarc
     " C++ syntax highlighting; default to C++11
