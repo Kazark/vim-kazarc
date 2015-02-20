@@ -61,15 +61,14 @@ vnoremap <S-Tab> <LT>gv
 " I select everything in a file far more than I increment an integer! Why not
 " make CTRL-A do what it does in almost every other program?
 nmap <C-a> ggVG
-
 " CTRL-C doesn't do anything valuable in Normal or Visual mode. Why not map it
-" to what it does in almost every other program (CUA)?
+" to what it does in almost every other program?
 vmap <C-c> "+y
 nmap <C-c> "+yy
-
-" Similarly, while I do not want to overwrite the mapping of control v (it's
-" default Vim behavior is too valuable), why not create something similar?
-map <leader><C-v> "+p
+" Why not make Visual block mode use CTRL-B so we can free up CTRL-V for CUA?
+nnoremap <C-b> <C-v>
+nnoremap <C-v> "+p
+vnoremap <C-v> "+p
 
 " Like ZZ and ZQ...
 nmap <silent> ZA :qa<CR>
