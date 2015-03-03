@@ -14,7 +14,7 @@ call kazarc#ConfigurePlugins()
 call kazarc#MakeBackspaceFullyFunctional()
 call kazarc#HideToolAndMenuBarInGUI()
 
-let mapleader=","
+let g:mapleader=","
 
 set autowrite " So `:make`, `:cnfile`, etc, are easier to use
 set autoread " Why prompt unless there is danger of loosing something?
