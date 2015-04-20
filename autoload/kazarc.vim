@@ -48,10 +48,6 @@ function kazarc#ConfigureSyntastic()
     let g:syntastic_javascript_checkers = ['jshint']
 endfunction
 
-function kazarc#ConfigureGist()
-    let g:gist_edit_with_buffers = 1
-endfunction
-
 function kazarc#ConfigureDelimitMate()
     " delimitMate goofs up Vim comments
     " For now, I'm going to just disable delimitMate's autoclosing in Vim
@@ -59,11 +55,20 @@ function kazarc#ConfigureDelimitMate()
     let g:delimitMate_excluded_ft = "vim"
 endfunction
 
+function kazarc#ConfigureGist()
+    let g:gist_edit_with_buffers = 1
+endfunction
+
+function kazarc#ConfigureLimelight()
+    let g:limelight_conceal_ctermfg = 'gray'
+endfunction
+
 function kazarc#ConfigurePlugins()
     filetype plugin on
     call kazarc#ConfigureSyntastic()
     call kazarc#ConfigureDelimitMate()
     call kazarc#ConfigureGist()
+    call kazarc#ConfigureLimelight()
 endfunction
 
 function kazarc#ConfigureForConEmu()
