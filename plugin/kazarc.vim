@@ -69,6 +69,8 @@ nmap <C-c> "+yy
 nnoremap <C-b> <C-v>
 nnoremap <C-v> "+p
 vnoremap <C-v> "+p
+nnoremap <C-x> "+dd
+vnoremap <C-x> "+d
 
 " Like ZZ and ZQ...
 nmap <silent> ZA :qa<CR>
