@@ -111,4 +111,7 @@ augroup kazarc
     autocmd Filetype jsfragment setlocal syntax=javascript
     " Leave diff mode when using Git if file has no corresponding file to diff with
     autocmd VimEnter * call kazarc#IfStartedInDiffModeCloseNulGitBufferIfAny()
+    " From http://vimrcfu.com/snippet/186
+    " let terminal resize scale the internal windows
+    autocmd VimResized * :wincmd =
 augroup end
