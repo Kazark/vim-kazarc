@@ -82,6 +82,15 @@ map <leader>e lt_
 omap u t_
 omap U f_
 
+" Like Q, q only ever causes me trouble. I never use it deliberately
+map q <nop>
+" Quickfix mappings
+nnoremap <silent> qff :cc<CR>
+nnoremap <silent> qfj :cn<CR>
+nnoremap <silent> qfk :cN<CR>
+nnoremap <silent> qfl :cnf<CR>
+nnoremap <silent> qfh :cNf<CR>
+
 " Map s to surround in visual mode from Tim Pope's Surround plugin
 xmap s <Plug>VSurround
 " One of the most common things I do with Surround is to surround a single
