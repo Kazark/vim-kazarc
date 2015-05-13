@@ -25,6 +25,8 @@ set mouse=n " Doesn't seem to do anything on Windows
 
 " Make sure we get column and row displayed
 set ruler
+" Make sure the statusline is displayed
+set laststatus=2
 
 " So you don't have to use \c while searching. Seems like a good idea. I'll
 " try it out.
