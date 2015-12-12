@@ -86,12 +86,26 @@ omap U f_
 
 " Like Q, q only ever causes me trouble. I never use it deliberately
 map q <nop>
+" However I do want to maintain the q: functionality
+nmap q: q:
 " Quickfix mappings
 nnoremap <silent> qff :cc<CR>
 nnoremap <silent> qfj :cn<CR>
 nnoremap <silent> qfk :cN<CR>
 nnoremap <silent> qfl :cnf<CR>
 nnoremap <silent> qfh :cNf<CR>
+
+" Ease the use of terminal mode window switching
+tnoremap <C-w>l <C-\><C-n><C-w>l
+tnoremap <C-w>h <C-\><C-n><C-w>h
+tnoremap <C-w>j <C-\><C-n><C-w>j
+tnoremap <C-w>k <C-\><C-n><C-w>k
+
+" Ease the use of insert mode window switching
+inoremap <C-w>l <C-\><C-n><C-w>l
+inoremap <C-w>h <C-\><C-n><C-w>h
+inoremap <C-w>j <C-\><C-n><C-w>j
+inoremap <C-w>k <C-\><C-n><C-w>k
 
 " Map s to surround in visual mode from Tim Pope's Surround plugin
 xmap s <Plug>VSurround
