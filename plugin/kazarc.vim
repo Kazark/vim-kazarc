@@ -119,6 +119,15 @@ nmap <leader>` ves`<Esc>
 map <silent> <leader>tc :tabclose<CR>
 map <silent> <leader>tn :tabnew<CR>
 
+nnoremap <leader>du :diffupdate<CR>
+nnoremap <leader>dg :diffget<CR>
+nnoremap <leader>dp :diffput<CR>
+nnoremap <leader>dt :diffthis<CR>
+xnoremap <leader>du :'<,'>diffupdate<CR>
+xnoremap <leader>dg :'<,'>diffget<CR>
+xnoremap <leader>dp :'<,'>diffput<CR>
+xnoremap <leader>dt :'<,'>diffthis<CR>
+
 augroup kazarc
     " C++ syntax highlighting; default to C++11
     autocmd Filetype cpp setlocal syntax=cpp11 " How to check whether this is available?
