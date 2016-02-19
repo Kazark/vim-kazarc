@@ -119,14 +119,14 @@ nmap <leader>` ves`<Esc>
 map <silent> <leader>tc :tabclose<CR>
 map <silent> <leader>tn :tabnew<CR>
 
-nnoremap <leader>du :diffupdate<CR>
-nnoremap <leader>dg :diffget<CR>
-nnoremap <leader>dp :diffput<CR>
-nnoremap <leader>dt :diffthis<CR>
-xnoremap <leader>du :'<,'>diffupdate<CR>
-xnoremap <leader>dg :'<,'>diffget<CR>
-xnoremap <leader>dp :'<,'>diffput<CR>
-xnoremap <leader>dt :'<,'>diffthis<CR>
+nnoremap <silent> <leader>du :diffupdate<CR>
+nnoremap <silent> <leader>dg :diffget<CR>
+nnoremap <silent> <leader>dp :diffput<CR>
+nnoremap <silent> <leader>dt :diffthis<CR>
+xnoremap <silent> <leader>du :'<,'>diffupdate<CR>
+xnoremap <silent> <leader>dg :'<,'>diffget<CR>
+xnoremap <silent> <leader>dp :'<,'>diffput<CR>
+xnoremap <silent> <leader>dt :'<,'>diffthis<CR>
 
 augroup kazarc
     " C++ syntax highlighting; default to C++11
