@@ -123,10 +123,9 @@ nnoremap <silent> <leader>du :diffupdate<CR>
 nnoremap <silent> <leader>dg :diffget<CR>
 nnoremap <silent> <leader>dp :diffput<CR>
 nnoremap <silent> <leader>dt :diffthis<CR>
-xnoremap <silent> <leader>du :'<,'>diffupdate<CR>
+nnoremap <silent> <leader>do :diffoff<CR>
 xnoremap <silent> <leader>dg :'<,'>diffget<CR>
 xnoremap <silent> <leader>dp :'<,'>diffput<CR>
-xnoremap <silent> <leader>dt :'<,'>diffthis<CR>
 
 augroup kazarc
     " C++ syntax highlighting; default to C++11
