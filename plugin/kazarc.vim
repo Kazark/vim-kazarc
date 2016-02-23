@@ -60,6 +60,11 @@ nnoremap <S-Tab> <LT><LT>
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <LT>gv
 
+" Feels righ
+nnoremap <silent> <bar><lt> :left<CR>
+xnoremap <silent> <bar><lt> :'<,'>left<CR>
+
+
 " I select everything in a file far more than I increment an integer! Why not
 " make CTRL-A do what it does in almost every other program?
 nmap <C-a> ggVG
