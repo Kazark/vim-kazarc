@@ -32,9 +32,13 @@ function kazarc#SetUpColors()
         set t_Co=256
     endif
     try
-        colorscheme jellybeans
+        colorscheme obsidian
     catch /^Vim\%((\a\+)\)\=:E185/
-        colorscheme elflord
+        try
+            colorscheme jellybeans
+        catch /^Vim\%((\a\+)\)\=:E185/
+            colorscheme elflord
+        endtry
     endtry
 endfunction
 
