@@ -158,9 +158,9 @@ endfunction
 
 function kazarc#IfStartedInDiffModeCloseNulGitBufferIfAny()
     if &diff && tabpagenr('$') == 1 && len(tabpagebuflist(1)) == 2
-        if bufname(1) == '\\.\nul'
+        if bufname(1) == '\\.\nul' || bufname(1) == '/dev/null'
             call kazarc#DeleteBufferAndNotify(1, 'Nothing to compare against; file is newly added')
-        elseif bufname(2) == '\\.\nul'
+        elseif bufname(2) == '\\.\nul' || bufname(2) == '/dev/null'
             call kazarc#DeleteBufferAndNotify(2, 'Nothing to compare against; file has been deleted')
         endif
     endif
