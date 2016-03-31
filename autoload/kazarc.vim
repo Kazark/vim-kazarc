@@ -63,6 +63,11 @@ function kazarc#ConfigureGist()
     let g:gist_edit_with_buffers = 1
 endfunction
 
+function kazarc#ConfigureG()
+    let g:vim_g_query_url = "http://duckduckgo.com/?q="
+    command DuckDuckGo Google
+endfunction
+
 function kazarc#ConfigureLimelight()
     let g:limelight_conceal_ctermfg = 'gray'
 endfunction
@@ -73,6 +78,7 @@ function kazarc#ConfigurePlugins()
     call kazarc#ConfigureDelimitMate()
     call kazarc#ConfigureGist()
     call kazarc#ConfigureLimelight()
+    call kazarc#ConfigureG()
 endfunction
 
 function kazarc#ConfigureForConEmu()
