@@ -26,20 +26,22 @@ function kazarc#MakeBackspaceFullyFunctional()
     set backspace=indent,eol,start
 endfunction
 
+function kazarc#TryColorschemesInThisOrder(colorschemes)
+    for l:cscheme in a:colorschemes
+        try
+            execute 'colorscheme ' . l:cscheme
+            break
+        catch /^Vim\%((\a\+)\)\=:E185/
+        endtry
+    endfor
+endfunction
+
 function kazarc#SetUpColors()
     syntax on
     if &term == "xterm" || &term == "builtin_gui"
         set t_Co=256
     endif
-    try
-        colorscheme obsidian
-    catch /^Vim\%((\a\+)\)\=:E185/
-        try
-            colorscheme jellybeans
-        catch /^Vim\%((\a\+)\)\=:E185/
-            colorscheme elflord
-        endtry
-    endtry
+    call kazarc#TryColorschemesInThisOrder(['obsidian', 'jellybeans', 'elflord'])
 endfunction
 
 function kazarc#ConfigureSyntastic()
