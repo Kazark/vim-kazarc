@@ -149,7 +149,7 @@ function kazarc#ConfigureForPlatform()
     if has("win32")
         call kazarc#ConfigureForWindows()
     endif
-    let l:uname = system('uname -o')
+    silent let l:uname = system('uname -o')
     if l:uname == "Cygwin\n"
         call kazarc#ConfigureForCygwin()
     elseif l:uname == "GNU/Linux\n"
@@ -164,11 +164,19 @@ function kazarc#DeleteBufferAndNotify(bufferNumber, message)
     call input(a:message . ' (press ENTER to continue)')
 endfunction
 
+function kazarc#BufferIsNull(bufnum)
+    return bufname(bufnum) == '\\.\nul' || bufname(bufnum) == '/dev/null'
+endfunction
+
+function kazarc#WasStartedInDiffMode()
+    return &diff && tabpagenr('$') == 1 && len(tabpagebuflist(1)) == 2
+endfunction
+
 function kazarc#IfStartedInDiffModeCloseNulGitBufferIfAny()
-    if &diff && tabpagenr('$') == 1 && len(tabpagebuflist(1)) == 2
-        if bufname(1) == '\\.\nul' || bufname(1) == '/dev/null'
+    if kazarc#WasStartedInDiffMode()
+        if kazarc#BufferIsNull(1)
             call kazarc#DeleteBufferAndNotify(1, 'Nothing to compare against; file is newly added')
-        elseif bufname(2) == '\\.\nul' || bufname(2) == '/dev/null'
+        elseif kazarc#BufferIsNull(2)
             call kazarc#DeleteBufferAndNotify(2, 'Nothing to compare against; file has been deleted')
         endif
     endif
