@@ -165,7 +165,7 @@ function kazarc#DeleteBufferAndNotify(bufferNumber, message)
 endfunction
 
 function kazarc#BufferIsNull(bufnum)
-    return bufname(bufnum) == '\\.\nul' || bufname(bufnum) == '/dev/null'
+    return bufname(a:bufnum) == '\\.\nul' || bufname(a:bufnum) == '/dev/null'
 endfunction
 
 function kazarc#WasStartedInDiffMode()
