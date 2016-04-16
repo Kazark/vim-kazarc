@@ -70,6 +70,11 @@ function kazarc#ConfigureG()
     command DuckDuckGo Google
 endfunction
 
+function kazarc#ConfigureElm()
+    let g:elm_format_autosave = 1
+    let g:elm_syntastic_show_warnings = 1
+endfunction
+
 function kazarc#ConfigureLimelight()
     let g:limelight_conceal_ctermfg = 'gray'
 endfunction
@@ -81,6 +86,7 @@ function kazarc#ConfigurePlugins()
     call kazarc#ConfigureGist()
     call kazarc#ConfigureLimelight()
     call kazarc#ConfigureG()
+    call kazarc#ConfigureElm()
 endfunction
 
 function kazarc#ConfigureForConEmu()
