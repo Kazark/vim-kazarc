@@ -145,4 +145,7 @@ augroup kazarc
     " From http://vimrcfu.com/snippet/186
     " let terminal resize scale the internal windows
     autocmd VimResized * :wincmd =
+    " Open .apk files as zip files
+    " Thanks to http://stackoverflow.com/a/22387908/834176
+    autocmd BufReadCmd *.apk call zip#Browse(expand("<amatch>"))
 augroup end
