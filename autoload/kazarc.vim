@@ -6,7 +6,7 @@ if exists('g:kazarc_loaded')
 endif
 let g:kazarc_loaded=1
 
-let s:colorschemes = ['jellybeans', 'obsidian', 'elflord']
+let s:colorschemes = ['jellybeans', 'obsidian', 'meta5', 'gotham256', 'elflord']
 
 function kazarc#TurnOnFancySearchFeatures()
     set incsearch
@@ -98,7 +98,7 @@ endfunction
 
 function kazarc#ConfigureForConEmu()
     " Enable 256 color support in ConEmu console emulator
-    let s:colorschemes = ['obsidian', 'jellybeans', 'elflord']
+    let s:colorschemes = ['obsidian', 'meta5', 'gotham256', 'jellybeans', 'elflord']
     set term=xterm
     set t_Co=256
     let &t_AB="\e[48;5;%dm"
