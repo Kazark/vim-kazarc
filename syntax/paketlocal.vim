@@ -10,7 +10,11 @@ syntax match paketLocalKeyword / git /
 
 syntax match paketLocalSymbol /->/
 
+syntax match paketLocalComment /^\/\/.*/
+syntax match paketLocalComment /^#.*/
+
 highlight link paketLocalKeyword Keyword
 highlight link paketLocalSymbol Operator
+highlight link paketLocalComment Comment
 
 let b:current_syntax = "paketlocal"
