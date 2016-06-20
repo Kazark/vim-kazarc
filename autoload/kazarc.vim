@@ -71,6 +71,11 @@ function kazarc#ConfigureG()
 endfunction
 
 function kazarc#ConfigureElm()
+    " Elm Format is very specific and weird about how it likes to format.  I
+    " got used to it, sort of, but I found that it hindered my type-driven
+    " development, because every time I did anything wrong enough, it would
+    " just cause Vim to go nuts instead of stating plainly what the problem
+    " was. It was rather scarring to use.
     "let g:elm_format_autosave = 1
     "let g:elm_syntastic_show_warnings = 1
 endfunction
