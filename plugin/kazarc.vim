@@ -6,13 +6,7 @@ if exists('g:kazarc_loaded_plugin')
 endif
 let g:kazarc_loaded_plugin=1
 
-call kazarc#ConfigureForPlatform()
-call kazarc#SetUpIndenting()
-call kazarc#TurnOnFancySearchFeatures()
-call kazarc#SetUpColors()
-call kazarc#ConfigurePlugins()
-call kazarc#MakeBackspaceFullyFunctional()
-call kazarc#HideToolAndMenuBarInGUI()
+call kazarc#Configure()
 
 let g:mapleader=","
 

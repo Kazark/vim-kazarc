@@ -6,6 +6,8 @@ if exists('g:kazarc_loaded')
 endif
 let g:kazarc_loaded=1
 
+let s:colorschemes = ['jellybeans', 'obsidian', 'elflord']
+
 function kazarc#TurnOnFancySearchFeatures()
     set incsearch
     set hlsearch
@@ -41,7 +43,7 @@ function kazarc#SetUpColors()
     if &term == "xterm" || &term == "builtin_gui"
         set t_Co=256
     endif
-    call kazarc#TryColorschemesInThisOrder(['obsidian', 'jellybeans', 'elflord'])
+    call kazarc#TryColorschemesInThisOrder(s:colorschemes)
 endfunction
 
 function kazarc#ConfigureSyntastic()
@@ -96,6 +98,7 @@ endfunction
 
 function kazarc#ConfigureForConEmu()
     " Enable 256 color support in ConEmu console emulator
+    let s:colorschemes = ['obsidian', 'jellybeans', 'elflord']
     set term=xterm
     set t_Co=256
     let &t_AB="\e[48;5;%dm"
@@ -195,4 +198,14 @@ endfunction
 
 function kazarc#IsCurrentBufferVimDoc()
     return match(expand('%:p'), escape(expand(split(&runtimepath, ',')[0]), ' \')) == 0
+endfunction
+
+function kazarc#Configure()
+    call kazarc#ConfigureForPlatform()
+    call kazarc#SetUpIndenting()
+    call kazarc#TurnOnFancySearchFeatures()
+    call kazarc#SetUpColors()
+    call kazarc#ConfigurePlugins()
+    call kazarc#MakeBackspaceFullyFunctional()
+    call kazarc#HideToolAndMenuBarInGUI()
 endfunction
