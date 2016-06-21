@@ -4,11 +4,12 @@ endif
 
 syntax case match
 
-syntax match paketDepsKeyword /^redirects/
-syntax match paketDepsKeyword /^source/
-syntax match paketDepsKeyword /^nuget/
-syntax match paketDepsKeyword /^http/
-syntax match paketDepsKeyword /^github/
+syntax match paketDepsKeyword /^\s*redirects/
+syntax match paketDepsKeyword /^\s*source/
+syntax match paketDepsKeyword /^\s*nuget/
+syntax match paketDepsKeyword /^\s*http/
+syntax match paketDepsKeyword /^\s*github/
+syntax match paketDepsKeyword /^\s*group/
 
 syntax match paketDepsSymbol />=/
 syntax match paketDepsSymbol /:\_s/
