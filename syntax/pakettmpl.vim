@@ -8,6 +8,7 @@ syntax match paketTmplKeyword /^type/
 syntax match paketTmplKeyword /^id/
 syntax match paketTmplKeyword /^version/
 syntax match paketTmplKeyword /^description/
+syntax match paketTmplKeyword /^releaseNotes/
 syntax match paketTmplKeyword /^files/
 syntax match paketTmplKeyword /^authors/
 syntax match paketTmplKeyword /^owners/
@@ -21,6 +22,7 @@ syntax match paketTmplKeyword /^developmentDependency/
 syntax match paketTmplKeyword /^include-pdbs/
 syntax match paketTmplKeyword /^iconUrl/
 syntax match paketTmplKeyword /^projectUrl/
+syntax match paketTmplKeyword /^licenseUrl/
 
 syntax match paketTmplVersion /\d\(\.\d\)\+/
 
