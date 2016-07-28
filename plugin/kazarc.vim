@@ -142,4 +142,7 @@ augroup kazarc
     " Open .apk files as zip files
     " Thanks to http://stackoverflow.com/a/22387908/834176
     autocmd BufReadCmd *.apk call zip#Browse(expand("<amatch>"))
+    " Enable marker-based folding in F# scripts
+    autocmd BufReadPost *.fsx setlocal foldmethod=marker
 augroup end
+
