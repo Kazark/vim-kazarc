@@ -129,6 +129,9 @@ xnoremap <silent> <leader>dp :'<,'>diffput<CR>
 " I always want to be able to poke around in the directory a file is in easily
 cnoremap %% %:p:h
 
+" Turn spelling on easily
+nnoremap <F7> :set spell<CR>
+
 augroup kazarc
     " C++ syntax highlighting; default to C++11
     autocmd Filetype cpp setlocal syntax=cpp11 " How to check whether this is available?
