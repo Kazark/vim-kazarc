@@ -130,7 +130,7 @@ xnoremap <silent> <leader>dp :'<,'>diffput<CR>
 cnoremap %% %:p:h
 
 " Turn spelling on easily
-nnoremap <F7> :set spell<CR>
+nnoremap <F7> :set spell!<CR>
 
 augroup kazarc
     " C++ syntax highlighting; default to C++11
