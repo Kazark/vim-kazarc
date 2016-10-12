@@ -29,9 +29,10 @@ set ignorecase smartcase
 " Go(lang) Vim runtime path
 set runtimepath+=$GOROOT/misc/vim
 
-" Why hold down the shift key? The default mapping of ; is not very useful
-nmap ; :
-vmap ; :
+call kazarc#hjkl()
+
+command Hjkl call kazarc#hjkl()
+command Jklsemicolon call kazarc#jklsemicolon()
 
 " Screw Vi-compatibility; let's make sense around here
 " From http://vimrcfu.com/snippet/88

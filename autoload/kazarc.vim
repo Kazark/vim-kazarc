@@ -210,3 +210,18 @@ function kazarc#Configure()
     call kazarc#MakeBackspaceFullyFunctional()
     call kazarc#HideToolAndMenuBarInGUI()
 endfunction
+
+function kazarc#jklsemicolon()
+    noremap ; l
+    noremap l j
+    noremap j h
+endfunction
+
+function kazarc#hjkl()
+    silent! unmap j
+    silent! unmap l
+    silent! unmap ;
+    " Why hold down the shift key? The default mapping of ; is not very useful
+    nmap ; :
+    vmap ; :
+endfunction
