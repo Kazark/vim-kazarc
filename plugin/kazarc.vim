@@ -128,7 +128,7 @@ xnoremap <silent> <leader>dg :'<,'>diffget<CR>
 xnoremap <silent> <leader>dp :'<,'>diffput<CR>
 
 " I always want to be able to poke around in the directory a file is in easily
-cnoremap %% %:p:h
+cnoremap %% =expand("%:p:h")<CR>/
 
 " Turn spelling on easily
 nnoremap <F7> :set spell!<CR>
