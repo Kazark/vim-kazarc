@@ -70,7 +70,9 @@ nmap <C-c> "+yy
 " Why not make Visual block mode use CTRL-B so we can free up CTRL-V for CUA?
 nnoremap <C-b> <C-v>
 nnoremap <C-v> "+p
+vnoremap <C-b> <C-v>
 vnoremap <C-v> "+p
+cnoremap <C-v> "+p
 nnoremap <C-x> "+dd
 vnoremap <C-x> "+d
 
