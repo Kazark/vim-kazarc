@@ -133,6 +133,9 @@ xnoremap <silent> <leader>dp :'<,'>diffput<CR>
 cnoremap %% =expand("%:p:h")<CR>/
 " Wildcard expand
 cnoremap %* =expand("%:p:h")<CR>/*
+" I want to be able to insert a file name as a class or module name
+nnoremap <leader>fn <C-R>=expand("%:t:r")<CR>
+vnoremap <leader>fn <C-R>=expand("%:t:r")<CR>
 
 " Turn spelling on easily
 nnoremap <F7> :set spell!<CR>
