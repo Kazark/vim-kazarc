@@ -106,10 +106,10 @@ if exists(':tnoremap') != 0
 endif
 
 " Ease the use of insert mode window switching
-inoremap <C-w>l <C-\><C-n><C-w>l
-inoremap <C-w>h <C-\><C-n><C-w>h
-inoremap <C-w>j <C-\><C-n><C-w>j
-inoremap <C-w>k <C-\><C-n><C-w>k
+inoremap <C-w>l <Esc><C-w>l
+inoremap <C-w>h <Esc><C-w>h
+inoremap <C-w>j <Esc><C-w>j
+inoremap <C-w>k <Esc><C-w>k
 
 " Map s to surround in visual mode from Tim Pope's Surround plugin
 xmap s <Plug>VSurround
