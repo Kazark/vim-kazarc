@@ -15,3 +15,5 @@ iabbrev FOr For
 iabbrev HIm Him
 iabbrev JOb Job
 iabbrev OUr Our
+iabbrev THe The
+iabbrev THis This
