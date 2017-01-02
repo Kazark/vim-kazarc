@@ -16,4 +16,8 @@ iabbrev HIm Him
 iabbrev JOb Job
 iabbrev OUr Our
 iabbrev THe The
+iabbrev NEw New
 iabbrev THis This
+iabbrev WHat What
+iabbrev JEsus Jesus
+iabbrev CHrist Christ
