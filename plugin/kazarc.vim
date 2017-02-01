@@ -55,10 +55,9 @@ nnoremap <S-Tab> <LT><LT>
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <LT>gv
 
-" Feels righ
+" Feels right
 nnoremap <silent> <bar><lt> :left<CR>
 xnoremap <silent> <bar><lt> :'<,'>left<CR>
-
 
 " I select everything in a file far more than I increment an integer! Why not
 " make CTRL-A do what it does in almost every other program?
@@ -135,7 +134,7 @@ cnoremap %% =expand("%:p:h")<CR>/
 cnoremap %* =expand("%:p:h")<CR>/*
 " I want to be able to insert a file name as a class or module name
 nnoremap <leader>fn a<C-R>=expand("%:t:r")<CR><Esc>
-vnoremap <leader>fn a<C-R>=expand("%:t:r")<CR><Esc>
+vnoremap <leader>fn c<C-R>=expand("%:t:r")<CR><Esc>
 
 " Turn spelling on easily
 nnoremap <F7> :set spell!<CR>
