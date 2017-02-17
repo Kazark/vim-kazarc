@@ -1,2 +1,2 @@
 " Author: Kazark
-call kazarc#SetTabWidthOptionsTo(2)
+call kazarc#SetLocalTabWidthOptionsTo(2)

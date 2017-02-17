@@ -159,16 +159,16 @@ function kazarc#ConfigureForWindows()
     endif
 endfunction
 
+function kazarc#SetLocalTabWidthOptionsTo(width)
+    execute "setlocal tabstop=" . a:width
+    execute "setlocal shiftwidth=" . &tabstop
+    execute "setlocal softtabstop=" . &tabstop
+endfunction
+
 function kazarc#SetTabWidthOptionsTo(width)
     let &tabstop=a:width
     let &shiftwidth=&tabstop
     let &softtabstop=&tabstop
-endfunction
-
-function kazarc#SetLocalTabWidthOptionsTo(width)
-    execute "setlocal tabstop=" . a:width
-    execute "setlocal shiftwidth=" . a:width
-    execute "setlocal softtabstop=" . a:width
 endfunction
 
 function kazarc#SetUpIndenting()
