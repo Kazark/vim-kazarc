@@ -17,6 +17,12 @@ syntax match paketTmplKeyword /^language/
 syntax match paketTmplKeyword /^summary/
 syntax match paketTmplKeyword /^copyright/
 syntax match paketTmplKeyword /^requireLicenseAcceptance/
+syntax match paketTmplKeyword /^include-referenced-projects/
+syntax match paketTmplKeyword /^references/
+syntax match paketTmplKeyword /^frameworkAssemblies/
+syntax match paketTmplKeyword /^dependencies/
+syntax match paketTmplKeyword /^excludeddependencies/
+syntax match paketTmplKeyword /^excludedgroups/
 syntax match paketTmplKeyword /^tags/
 syntax match paketTmplKeyword /^developmentDependency/
 syntax match paketTmplKeyword /^include-pdbs/
