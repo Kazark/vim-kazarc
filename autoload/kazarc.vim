@@ -86,23 +86,6 @@ function kazarc#ConfigureLimelight()
     let g:limelight_conceal_ctermfg = 'gray'
 endfunction
 
-function kazarc#ConfigureOmnisharp()
-    "don't autoselect first item in omnicomplete, show if only one item (for preview)
-    "remove preview if you don't want to see any documentation whatsoever.
-    set completeopt=longest,menuone,preview
-    let g:OmniSharp_timeout = 2
-    let g:syntastic_cs_checkers = ['syntax', 'semantic']
-    augroup omnisharp_commands
-        autocmd!
-        " automatic syntax check on events (TextChanged requires Vim 7.4)
-        autocmd BufEnter,TextChanged,InsertLeave *.cs SyntasticCheck
-        " Automatically add new cs files to the nearest project on save
-        autocmd BufWritePost *.cs call OmniSharp#AddToProject()
-        "show type information automatically when the cursor stops moving
-        autocmd CursorHold *.cs call OmniSharp#TypeLookupWithoutDocumentation()
-    augroup END
-endfunction
-
 function kazarc#ConfigurePlugins()
     filetype plugin on
     call kazarc#ConfigureSyntastic()
@@ -111,7 +94,6 @@ function kazarc#ConfigurePlugins()
     call kazarc#ConfigureLimelight()
     call kazarc#ConfigureG()
     call kazarc#ConfigureElm()
-    call kazarc#ConfigureOmnisharp()
 endfunction
 
 function kazarc#ConfigureForConEmu()
