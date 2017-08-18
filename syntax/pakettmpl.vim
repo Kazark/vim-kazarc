@@ -32,8 +32,10 @@ syntax match paketTmplKeyword /^licenseUrl/
 
 syntax match paketTmplVersion /\d\(\.\d\)\+/
 
-syntax match paketTmplType /file$/
-syntax match paketTmplType /project$/
+syntax match paketTmplValue /file$/
+syntax match paketTmplValue /project$/
+syntax match paketTmplValue /true$/
+syntax match paketTmplValue /false$/
 
 syntax match paketTmplOp /==>/
 
@@ -43,7 +45,7 @@ syntax match paketTmplUrl /https\?:\/\/\(\w\+\(:\w\+\)\?@\)\?\([A-Za-z][-_0-9A-Z
 highlight link paketTmplKeyword Keyword
 highlight link paketTmplUrl String
 highlight link paketTmplVersion Float
-highlight link paketTmplType Constant
+highlight link paketTmplValue Constant
 highlight link paketTmplOp Operator
 
 let b:current_syntax = "pakettmpl"
