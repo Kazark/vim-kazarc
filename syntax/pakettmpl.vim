@@ -31,6 +31,7 @@ syntax match paketTmplKeyword /^projectUrl/
 syntax match paketTmplKeyword /^licenseUrl/
 
 syntax match paketTmplVersion /\d\(\.\d\)\+/
+syntax match paketTmplVersion /CURRENTVERSION/
 
 syntax match paketTmplValue /file$/
 syntax match paketTmplValue /project$/
@@ -38,6 +39,8 @@ syntax match paketTmplValue /true$/
 syntax match paketTmplValue /false$/
 
 syntax match paketTmplOp /==>/
+syntax match paketTmplOp />=/
+syntax match paketTmplOp /\~>/
 
 " Source: https://gist.github.com/tobym/584909
 syntax match paketTmplUrl /https\?:\/\/\(\w\+\(:\w\+\)\?@\)\?\([A-Za-z][-_0-9A-Za-z]*\.\)\{1,}\(\w\{2,}\.\?\)\{1,}\(:[0-9]\{1,5}\)\?\S*/
