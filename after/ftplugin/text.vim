@@ -38,3 +38,7 @@ iabbrev ahve have
 iabbrev fo of
 iabbrev LROD LORD
 iabbrev utno unto
+iabbrev thigns things
+iabbrev Thigns Things
+iabbrev thign thing
+iabbrev Thign Thing
