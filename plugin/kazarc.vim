@@ -29,10 +29,8 @@ set ignorecase smartcase
 " Go(lang) Vim runtime path
 set runtimepath+=$GOROOT/misc/vim
 
-call kazarc#hjkl()
-
-command Hjkl call kazarc#hjkl()
-command Jklsemicolon call kazarc#jklsemicolon()
+nmap ; :
+vmap ; :
 
 " Screw Vi-compatibility; let's make sense around here
 " From http://vimrcfu.com/snippet/88
@@ -67,11 +65,11 @@ nmap <C-a> ggVG
 vmap <C-c> "+y
 nmap <C-c> "+yy
 " Why not make Visual block mode use CTRL-B so we can free up CTRL-V for CUA?
-nnoremap <C-b> <C-v>
-nnoremap <C-v> "+p
-vnoremap <C-b> <C-v>
-vnoremap <C-v> "+p
-cnoremap <C-v> "+p
+"nnoremap <C-b> <C-v>
+"nnoremap <C-v> "+p
+"vnoremap <C-b> <C-v>
+"vnoremap <C-v> "+p
+"cnoremap <C-v> "+p
 nnoremap <C-x> "+dd
 vnoremap <C-x> "+d
 

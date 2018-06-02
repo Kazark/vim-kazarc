@@ -210,17 +210,35 @@ function kazarc#Configure()
     call kazarc#HideToolAndMenuBarInGUI()
 endfunction
 
-function kazarc#jklsemicolon()
-    noremap ; l
-    noremap l j
-    noremap j h
+function kazarc#EnableBoxDrawing()
+    inoremap <bar>^ ┌
+    inoremap <bar>_ └
+    inoremap <bar>- ├
+    inoremap -<bar> ┤
+    inoremap ^<bar> ┐
+    inoremap _<bar> ┘
+    inoremap <bar> │
+    inoremap -- ─
+    inoremap -T- ┬
+    inoremap -L- ┴
+    inoremap -+- ┼
 endfunction
 
-function kazarc#hjkl()
-    silent! unmap j
-    silent! unmap l
-    silent! unmap ;
-    " Why hold down the shift key? The default mapping of ; is not very useful
-    nmap ; :
-    vmap ; :
+function kazarc#DisableBoxDrawing()
+    iunmap <bar>
+    iunmap <bar>^
+    iunmap <bar>_
+    iunmap <bar>-
+    iunmap -<bar>
+    iunmap ^<bar>
+    iunmap _<bar>
+    iunmap --
+    iunmap -T-
+    iunmap -L-
+    iunmap -+-
 endfunction
+
+function kazarc#RenderBoxDrawing()
+    %substitute/|/│/g
+endfunction
+
