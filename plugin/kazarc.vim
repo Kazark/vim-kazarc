@@ -8,7 +8,7 @@ let g:kazarc_loaded_plugin=1
 
 call kazarc#Configure()
 
-let g:mapleader=","
+let g:mapleader=" "
 
 set autowrite " So `:make`, `:cnfile`, etc, are easier to use
 set autoread " Why prompt unless there is danger of loosing something?
