@@ -1,0 +1,546 @@
+/* 
+main.css
+Version 0.3 folded in common.css to get a simple one-file version
+Version 0.2 changed background color to mostly grey  2009-08-05
+Version 0.1
+
+General CSS Stylesheet Definitions Common to Circuitous Root
+Intended to be incorporated into other CSS stylesheets.
+Requires: CSS Level 2
+          common.css
+
+Copyright 2006-2010 by David M. MacMillan and Rollande Krandall.
+Based on earlier work by David M. MacMillan that was copyright 2003-2005.
+
+If you wish to consider this a document rather than a program, then
+this work is licensed under the Creative Commons Attribution-ShareAlike
+License.  To view a copy of this license, visit
+   http://creativecommons.org/licenses/by-sa/2.0/
+or send a letter to
+Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.
+
+If you wish to consider this a program rather than a document, then
+this work is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+   
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the
+Free Software Foundation, Inc.
+59 Temple Place, Suite 330
+Boston, MA  02111-1307
+USA
+
+Circuitous Root is a registered trademark of David M. MacMillan and 
+Rollande Krandall
+
+Presented originally by Circuitous Root (R). http://www.CircuitousRoot.com/
+
+*/
+
+
+/* Formerly the part here was a separate file, "common.css" */
+/************************************************************/
+/* 
+formerly this first part was:
+common.css
+Version 0.1 changed background ab private color to match new
+            mostly grey background, 2009-08-05
+Version 0.0
+*/
+
+
+/* The CSS box model surrounds each (potentially nested) content area
+   with three rings: padding, border, margin.  Of these, only the border
+   can have any real content; the other two are just spacers.
+
+   For the BODY, use these only to draw a fine line on its right,
+   which will indicate the right-hand side of the intended page when 
+   displayed on windows that are too wide.  (Note: in main.css this is
+   also indicated by setting the HTML background to white, but putting
+   a line in makes it a visually clean split between the BODY and the
+   extra space which may be present in HTML.
+   Do not use the padding or margin areas to set any margins for the
+   overall page in BODY. 
+
+   The BODY is entirely divided into zero or more DIVs of types
+      broadside
+      broadside-divider
+      chapter
+      standard-links
+   Set the visible page margin characteristics in them.
+*/
+
+BODY {
+   width: 45em;
+   margin:             0px;
+   border-left:        0px;
+   border-right:       1px;
+   border-right-style: solid;
+   border-right-color: black;
+   border-top:         0px;
+   border-bottom:      1px;
+   border-bottom-style: solid;
+   padding:            0px
+   }
+
+BODY.wide {
+   width: 55em;
+   margin:             0px;
+   border-left:        0px;
+   border-right:       1px;
+   border-right-style: solid;
+   border-right-color: black;
+   border-top:         0px;
+   border-bottom:      1px;
+   border-bottom-style: solid;
+   padding:            0px
+   }
+
+BODY.doublewide {
+   width: 90em;
+   margin:             0px;
+   border-left:        0px;
+   border-right:       1px;
+   border-right-style: solid;
+   border-right-color: black;
+   border-top:         0px;
+   border-bottom:      1px;
+   border-bottom-style: solid;
+   padding:            0px
+   }
+
+DIV.in-wide-body {
+   width: 45em;
+}
+
+DIV.broadside {
+   margin-left:  2em;
+   margin-right: 2em;
+   margin-bottom: 1em;
+   padding-top:  1em;
+/* DEBUG
+border: 1px;
+border-style: solid;
+border-color: green;
+*/
+   clear:        both;
+   font-family:  serif
+   }
+
+DIV.broadside-divider {
+   margin-left:  2em;
+   margin-right: 2em;
+/* DEBUG
+border: 1px;
+border-style: solid;
+border-color: red;
+*/
+   clear:        both;
+   text-align:   center;
+   font-family:  serif
+   }
+
+DIV.chapter {
+   margin-left:  2em;
+   margin-right: 2em;
+   padding-top:  1em;
+/* DEBUG
+border: 1px;
+border-style: solid;
+border-color: blue;
+*/
+   clear:        both;
+   font-family:  serif
+   }
+
+DIV.standard-links {
+   margin-left:  2em;
+   margin-right: 2em;
+   padding-top:  1em;
+/* DEBUG
+border: 1px;
+border-style: solid;
+border-color: yellow;
+*/
+   clear:        both;
+   font-family:  serif
+   }
+
+
+DIV.abstract {
+   padding-top: 1em;
+   clear: left
+   }
+
+DIV.abstract-private {
+   padding-top: 1em;
+   clear: left;
+/*
+   background: #77AADD */
+/* subtract 0x20 from each R, G, B value of background (darken it) */
+   background: #80808f
+   }
+
+P.abstract-title {
+   margin-top: 0em;
+   margin-bottom: 0em;
+   font-style: oblique;
+   font-size:  x-large
+   }
+
+/* For an unstructured bibliographic entry, just do a simple hanging indent. */
+P.bibl {
+   margin-left: 3em;
+   text-indent: -3em
+   }
+
+/* Line up a bibliographic annotation with the bibliographic entry. */
+P.bibl-annotation {
+   margin-left: 3em
+   }
+
+P.glossary-entry {
+   margin-left: 3em;
+   text-indent: -3em
+   }
+P.glossary-continuation {
+   margin-left: 3em;
+   }
+
+P.note-entry {
+   margin-left: 3em;
+   text-indent: -3em
+   }
+P.note-continuation {
+   margin-left: 3em;
+   }
+P.blockquote {
+   margin-left: 3em;
+   }
+
+P.abstract-p {
+   margin-top: 0em;
+   font-weight: lighter
+   }
+
+P { 
+  }
+
+P.aside {
+   font-size:     0.75em;
+   font-style:    italic;
+   width:         40%;
+   float:         right;
+   margin-top:    0.7em;
+   margin-left:   1em;
+   margin-bottom: 0.2em;
+   border:        thin solid gray;
+   padding:       0.5em;
+   }
+
+
+AB.lexicon-entry {
+   float: left;
+   clear: both;
+   margin-left: 3em;
+   text-indent: -3em;
+   }
+
+/* below, do both DIV and SPAN because I've got pages with each;
+   DIV worked mostly but was wrong; SPAN requires a CSS hack to make it work.*/
+
+DIV.click-prompt-go {
+   font-family: sans-serif;
+   font-size: x-small
+   }
+SPAN.click-prompt-go {
+   font-family: sans-serif;
+   font-size: x-small
+   }
+
+DIV.click-prompt-go-blank {
+   font-family: sans-serif;
+   font-size: x-small
+   }
+SPAN.click-prompt-go-blank {
+   font-family: sans-serif;
+   font-size: x-small
+   }
+
+DIV.click-prompt-read {
+   font-family: sans-serif;
+   font-size: x-small
+   }
+SPAN.click-prompt-read {
+   font-family: sans-serif;
+   font-size: x-small
+   }
+
+DIV.click-prompt-read-blank {
+   font-family: sans-serif;
+   font-size: x-small
+   }
+SPAN.click-prompt-read-blank {
+   font-family: sans-serif;
+   font-size: x-small
+   }
+
+DIV.click-prompt-view {
+   font-family: sans-serif;
+   font-size: x-small
+   }
+SPAN.click-prompt-view {
+   font-family: sans-serif;
+   font-size: x-small
+   }
+
+DIV.click-prompt-view-blank {
+   font-family: sans-serif;
+   font-size: x-small
+   }
+SPAN.click-prompt-view-blank {
+   font-family: sans-serif;
+   font-size: x-small
+   }
+
+/* BR seems to give a blank line (it shouldn't, but the opening and closing
+   br tags each give a linebreak; this seems to be an HTML bug),
+   so here set the height of that blank line to ALMOST nothing */
+/* BR is generated after the "click-prompt..." AB elements */
+BR {
+   line-height: 10%
+   }
+
+
+
+DIV.abstract IMG {
+   float: left; 
+   margin-right: 1em;
+   border-width: 1px;
+   border-style: solid;
+   border-color: black
+   }
+
+DIV.abstract-private IMG {
+   float: left;
+   margin-right: 1em;
+   border-width: 1px;
+   border-style: solid;
+   border-color: black
+   }
+
+DIV.broadside-divider IMG {
+   border-width: 1px;
+   border-style: solid;
+   border-color: white
+   }
+
+
+H1.main {
+   margin-top:    0em;
+   margin-bottom: 0em;
+   text-align:  center;
+   font-size:   xx-large;
+   font-style:  oblique;
+   font-weight: lighter
+   }
+
+H1.sub {
+   margin-top:  0em;
+   margin-bottom:  0em;
+   text-align:  center;
+   font-family: sans-serif;
+   font-size:   large;
+   font-style:  normal;
+   font-weight: lighter
+   }
+
+H2 {
+   font-variant:  small-caps;
+   clear:         left;          /* keeps it below DIV.item things */
+   padding-top:   1em; 
+   margin-bottom: 0em
+   }
+
+H3 {
+   padding-top:   1em; 
+   clear:         left           /* keeps it below DIV.item things */
+   }
+
+
+UL  {list-style-type: circle;
+   padding-left:  2em;
+   text-indent:  0em;
+   }
+/*UL A {text-decoration: none}*/   /* don't underline links in lists */
+/*OL A {text-decoration: none}*/   /* don't underline links in lists */
+/*DIV.abstract A {text-decoration: none}*/
+/*DIV.abstract-private A {text-decoration: none}*/
+
+/* the padding/indent values are ad hoc, and seem to work more or less
+   reasonably well with lists where the leftmost item is a two-digit
+   number; they may work poorly in other lists. */
+UL.nobullet {
+   list-style:    none;
+   padding-left:  2.5em;
+   text-indent:  -1.5em;
+   }
+
+UL.nobullet-private {
+   list-style:    none;
+   padding-left:    2em;
+   text-indent:  -1.5em;
+   background: #80808f
+   }
+
+DIV.epigraph {
+/*   text-align: center; */
+clear: both;
+   font-family: sans-serif; 
+   font-size: small;
+   margin-left: 10%;
+   margin-right: 10%
+   }
+
+/* A div for a block quote puts it in a box,
+   which floats left as a box (and thus doesn't wrap around
+   a "hanging indent" image) */
+DIV.bc {
+   float: left
+   /*DEBUG border-style: solid */
+   }
+
+/* an image used in an epigraph should be borderless */
+DIV.epigraph IMG {border: none}
+  
+
+P.annotation {margin-left: 3em}
+
+PRE.code-chunk {
+   padding: 1em;
+   background: white
+   }
+
+TD {
+   border: outset 1pt
+   }
+
+/* use this within a DIV.item */
+IMG.icon {
+   float: left; 
+   margin-right: 1em;
+   border: none
+   /* border-width: 1px */
+   }
+
+DIV.legal-matters {
+   clear:        both;
+   font-size:    x-small;
+   text-align:   right; 
+   margin-top:   5em;
+   margin-left:  6em;
+   margin-right: 0em;  /* rely on container DIV=broadside margins */
+   padding:      1em;
+   border:       outset medium
+   }
+
+DIV.standard-linking-image {
+   position: relative;
+   float: left; 
+   vertical-align: bottom;
+   margin-right: 1em
+   }
+
+DIV.standard-linking-image IMG { 
+   border-width: 1px;
+   border-style: solid;
+   border-color: black
+   /* border: inset medium  */ /* as if looking into the link */
+   }
+
+
+A.surprise {text-decoration: none}    /* hide surprise links */
+
+
+/* This indicates that the item (most often an A) is "thin" in content - 
+   present and not incorrect, but not yet substantive. */
+[class="thin"] {color: gray !important}
+
+/* This indicates that the item linked to is simply not ready yet. */
+[class="private"] {background: #80808f !important}
+[class="notready"] {text-decoration: line-through !important}
+
+/* BEGIN "main" itself */
+/***********************/
+
+/* HTML is the root container.  Set it to a neutral white,
+   and then (below) set BODY to the actual background color for the page.
+   This way the page-as-intended is clearly separated from a too-wide
+   browser window's extra space.
+*/ 
+HTML {
+   background-color: white
+   }
+
+BODY {
+/* former and other colors:
+    #99CCFF; a very readable light blue
+    #b0b0bf; silver-grey with a hint of blue
+    #b0bfb0; actually very readable, but looks like old hospital green
+    #b0b7bf; silver-grey; push in only a little green, and more blue
+    #e5d78a; a decent very yellowish old paper approximation
+    #f0e0b0; lighter old paper approximation
+*/
+   background-color: #f0e0b0
+   }
+
+/*NOTE: The : in A gives these a higher CSS "specificity" rank than the SUP.
+        But even though they're supposed to inherit the SUP text-decoration, 
+        they DO NOT.  
+        This appears to be an implentation bug (in Firefox at least)
+        and I do not yet know the solution.
+*/
+A:link    { color: black; text-decoration: inherited}
+A:visited { color: black; text-decoration: inherited}
+A:hover   { color: blue; text-decoration:  inherited}
+SUP {font-size: xx-small; font-family: sans-serif; text-decoration: none}
+
+/* This section only exists on the main page: */
+DIV.lemurcomlinks {
+   clear:        left;
+   font-size:    small;
+   text-align:   left;
+   margin-right: 10%;           /* outside of the border */
+   margin-top: 5em;
+   padding:      1em;           /* between the border and the text */
+   border:       inset medium   /* opposite of the "legal" div */
+   }
+
+/* Without this, the lines separating table cells won't print. */
+TABLE{
+   border-color: black;
+   border-style: solid;
+   border-width: 0 0 1px 1px;
+   border-spacing: 0;
+   border-collapse: collapse
+}
+TD{
+   border-color: black;
+   border-style: solid;
+   margin: 0;
+   padding: 4px;
+   border-width: 1px 1px 0 0
+}
+
+
+/*
+Version 0.1 lightened up background to 99CCFF
+Version 0.0 initial
+*/

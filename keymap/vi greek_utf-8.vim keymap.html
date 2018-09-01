@@ -1,0 +1,1077 @@
+<!--?xml version="1.0" encoding="utf-8"?-->
+<html xmlns:tei="http://www.tei-c.org/ns/1.0"><meta http-equiv="content-security-policy" content="script-src 'none';worker-src 'none';media-src http: https:;object-src http: https:"><head> 
+<!-- Originally retrieved from: https://circuitousroot.com/language/computer/vi-keymap-greek.html -->
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+<title>vi greek_utf-8.vim keymap</title> 
+
+<link rel="stylesheet" type="text/css" media="all" title="main" href="vi%20greek_utf-8.vim%20keymap_files/main.css"> 
+
+</head> 
+<body><div class="broadside"> 
+
+
+<h1 class="main">vi greek-prosody_utf-8.vim keymap</h1> 
+</div> 
+
+ 
+
+
+<h2> 
+<a name="d1e49">1. Traditional Greek Keyboard Layout</a> 
+</h2> 
+<a id=""> </a> 
+
+<p> 
+<a id=""> </a>The mapping used in the "greek_utf-8" keymap 
+supplied with vim perplexed me at first, 
+but that was only because of my own ignorance. 
+For example, I would have used the "w" character for lowercase omega, 
+as it looks a bit like a lowercase omega; 
+this keyboard mapping uses "v" (and uses "w" for final sigma). 
+It turns out, of course, that the mapping used in this keymap 
+is simply that of the traditional Greek keyboard layout 
+(for modern monotonic and polytonic Greek?) 
+
+</p> 
+
+<p> 
+<a id=""> </a>Here is an illustration of such a Greek keyboard layout, 
+from the 
+
+
+<a href="http://en.wikipedia.org/">Wikipedia (EN)</a> 
+article on 
+" 
+
+<a href="http://en.wikipedia.org/wiki/Keyboard_layout">Keyboard layout</a>." 
+
+</p> 
+
+<img src="vi%20greek_utf-8.vim%20keymap_files/Keyboard_Layout_Greek.png" alt="Traditional Greek Keyboard Layout" width="540" height="225"> 
+<p>Traditional Greek Keyboard Layout</p> 
+
+<p> 
+<a id=""> </a>What is interesting in this keyboard mapping is simply the 
+position of several alphabetic keys vis-a-vis a US ASCII keyboard: 
+
+</p> 
+
+<ul> 
+<a id=""> </a> 
+
+<a id=""> </a> 
+<li>final sigma (ς) at lowercase w</li> 
+
+<a id=""> </a> 
+<li>theta (θ/Θ) at u/U</li> 
+
+<a id=""> </a> 
+<li>xi (ξ/Ξ) at j/J</li> 
+
+<a id=""> </a> 
+<li>psi (ψ/Ψ) at c/C</li> 
+
+<a id=""> </a> 
+<li>omga (ω/Ω) at v</li> 
+</ul> 
+
+<p> 
+<a id=""> </a>A number of other comments may be made concerning this keyboard image 
+relative to the mapping in the greek_utf-8 keymap, 
+and of course I'll make them, 
+but they may be irrelevant. 
+I have no idea how representative the keyboard shown above is 
+(keyboards differ, and even 
+my own QWERTY keyboard differs from it in the placement 
+of some non-Greek symbols). 
+It might be best simply to 
+skip to the next section, 
+which concerns the greek_utf-8 mapping itself. 
+In any event: 
+</p> 
+
+<ul> 
+<a id=""> </a> 
+
+<a id=""> </a> 
+<li>Number row: 
+Characters shown on the lower right of the keys are not present 
+in greek_utf-8 
+(superscript numerals, plus/minus sign, one-half sign) 
+</li> 
+
+<a id=""> </a> 
+<li>Top letter row: 
+The colon shown (where a Q is in a US keyboard) 
+maps to an ASCII colon in greek_utf-8 
+(This might indeed be an ASCII colon in modern Greek; 
+it is not an ancient Greek "ano teleia" 
+(middle-dot; U+0387 (·), which is the ancient colon/semicolon.)) 
+</li> 
+
+<a id=""> </a> 
+<li>Top letter row: 
+The shifted third-letter-over shown 
+(where the W is on a US keyboard) 
+may be a dialytika/diaeresis with an additional accent 
+(it's hard for me to read it in this image). 
+It maps to "ano teleia" in greek_utf-8 
+(middle-dot; U+-387 (·); which is the ancient colon/semicolon). 
+(The greek_utf-8 keymap 
+comments that this is from the Emacs text editor's conventions. 
+It is also enterable as ";." (semicolon period); see below). 
+</li> 
+
+<a id=""> </a> 
+<li>Top letter row: 
+The left and right pointed double quotation marks shown here are not present 
+in greek_utf-8 
+(they are enterable as "&lt;&lt;" and "&gt;&gt;"; see the greek_utf-8 keymap file). 
+</li> 
+
+<a id=""> </a> 
+<li>Middle letter row: 
+The character shown in the lower-right of the acute/dialytika/diaeresis key 
+(the colon/semicolon key in a US ASCII keyboard) 
+may be a dialytika/diaeresis with an additionl accent. 
+As such it isn't mapped in greek_utf-8. 
+</li> 
+
+<a id=""> </a> 
+<li>vertical-bar/backslash key (my keyboard has this in a different place): 
+the greek_utf-8 vertical bar is used for precomposed iota subscript; 
+with a pause after, it becomes just a vertical bar. 
+</li> 
+</ul> 
+
+
+<h2> 
+<a name="d1e97">2. Using the greek_utf-8 keymap</a> 
+</h2> 
+<a id=""> </a> 
+
+
+<h2> 
+<a name="d1e100">2.1. Explanation</a> 
+</h2> 
+<a id=""> </a> 
+
+<p> 
+<a id=""> </a>This is just a sort of summary by categories I've invented. 
+For the real details, see the "greek_utf-8" keymap file itself 
+(in /usr/share/vim/current/keymap/greek_utf-8.vim 
+on SuSE 10.0). 
+</p> 
+
+
+<h2> 
+<a name="d1e106">2.2. Ordinary Letters Not Likely to Cause Confusion</a> 
+</h2> 
+<a id=""> </a> 
+
+<p> 
+<a id=""> </a>QUERTY A maps to alpha, B to beta, etc. 
+If unaccented, 
+then these are ordinary, unaccented characters from the 
+Unicode "Greek and Coptic" range, U+0370 to U+03FF). 
+No problem. 
+</p> 
+
+
+<h2> 
+<a name="d1e112">2.3. Ordinary Letters Not Obvious to an English/QUERTY User</a> 
+</h2> 
+<a id=""> </a> 
+
+<p> 
+<a id=""> </a>These are, as noted earlier, simply conventions from 
+Greek keyboards: 
+</p> 
+
+<ul> 
+<a id=""> </a> 
+
+<a id=""> </a> 
+<li>θ Θ theta: u U</li> 
+
+<a id=""> </a> 
+<li>ξ Ξ xi: j J</li> 
+
+<a id=""> </a> 
+<li>φ Φ phi: f F</li> 
+
+<a id=""> </a> 
+<li>ψ Ψ psi: c C</li> 
+
+<a id=""> </a> 
+<li>ς final sigma: w</li> 
+
+<a id=""> </a> 
+<li>ω Ω omega: v V</li> 
+</ul> 
+
+<p> 
+<a id=""> </a>They, also, map to 
+the Unicode "Greek and Coptic" range, U+0370 to U+03FF. 
+</p> 
+
+
+<h2> 
+<a name="d1e133">2.4. Common Diacritical Marks as Precomposed Characters</a> 
+</h2> 
+<a id=""> </a> 
+
+
+<h2> 
+<a name="d1e136">2.4.1. Acute Accent</a> 
+</h2> 
+<a id=""> </a> 
+
+<p> 
+<a id=""> </a>To mark a character with an acute accent, 
+type a (QWERTY) semicolon before the letter. 
+It must be a letter capable of taking an acute accent. 
+</p> 
+
+<ul> 
+<a id=""> </a> 
+
+<a id=""> </a> 
+<li>;a gives ά</li> 
+
+<a id=""> </a> 
+<li>;A gives Ά</li> 
+
+<a id=""> </a> 
+<li>;e gives έ</li> 
+
+<a id=""> </a> 
+<li>;E gives Έ</li> 
+
+<a id=""> </a> 
+<li>;i gives ί</li> 
+
+<a id=""> </a> 
+<li>;I gives Ί</li> 
+
+<a id=""> </a> 
+<li>κτλ.</li> 
+</ul> 
+
+<p> 
+<a id=""> </a>The acute accent is also called the "oxia," 
+and perhaps (in modern Greek only?) the "tonos." 
+</p> 
+
+
+<h2> 
+<a name="d1e159">2.4.2. Grave Accent</a> 
+</h2> 
+<a id=""> </a> 
+
+<p> 
+<a id=""> </a>To mark a character with a grave accent, 
+type a (QWERTY) left-single-quote 
+(the unshifted tilde key) before the letter. 
+It must be a letter capable of taking a grave accent. 
+</p> 
+
+<ul> 
+<a id=""> </a> 
+
+<a id=""> </a> 
+<li>`a gives ὰ</li> 
+
+<a id=""> </a> 
+<li>`e gives ὲ</li> 
+
+<a id=""> </a> 
+<li>`i gives ὶ</li> 
+
+<a id=""> </a> 
+<li>κτλ.</li> 
+</ul> 
+
+<p> 
+<a id=""> </a>The grave accent is also called the "varia." 
+</p> 
+
+
+<h2> 
+<a name="d1e176">2.4.3. Circumflex Accent</a> 
+</h2> 
+<a id=""> </a> 
+
+<p> 
+<a id=""> </a>To mark a character with a circumflex accent, 
+type a (QWERTY) tilde before the letter. 
+It must be a letter capable of taking a circumflex accent. 
+</p> 
+
+<ul> 
+<a id=""> </a> 
+
+<a id=""> </a> 
+<li>~a gives ᾶ</li> 
+
+<a id=""> </a> 
+<li>~i gives ῖ</li> 
+
+<a id=""> </a> 
+<li>κτλ.</li> 
+</ul> 
+
+<p> 
+<a id=""> </a>Note that this is for data entry, not display. 
+Whether the circumflex displays looking like a tilde or 
+looking like a carat depends on the program displaying it. 
+This displaying program won't necessarily be vi. 
+
+</p> 
+
+<p> 
+<a id=""> </a>Note that the necessarily short vowels ε and ο cannot take 
+a circumflex accent. 
+</p> 
+
+<p> 
+<a id=""> </a>The circumflex accent is also called the 
+"perispomeni" 
+and is also represented, at times, 
+by characters called "tilde" (though I don't believe it should 
+be written as a tilde, but this is another issue) 
+and "inverted breve." 
+</p> 
+
+
+<h2> 
+<a name="d1e195">2.4.4. Rough Breathing Mark</a> 
+</h2> 
+<a id=""> </a> 
+
+<p> 
+<a id=""> </a>To mark a character with a rough breathing mark, 
+type a (QWERTY) less-than before the letter. 
+It must be a letter capable of taking a rough breathing mark. 
+</p> 
+
+<ul> 
+<a id=""> </a> 
+
+<a id=""> </a> 
+<li>&lt;a gives ἁ</li> 
+
+<a id=""> </a> 
+<li>&lt;e gives ἑ</li> 
+
+<a id=""> </a> 
+<li>&lt;i gives ἱ</li> 
+
+<a id=""> </a> 
+<li>κτλ.</li> 
+</ul> 
+
+<p> 
+<a id=""> </a>The rough breathing mark is also called the "dasia" 
+and sometimes (e.g., in Unicode) the "reversed comma above." 
+</p> 
+
+
+<h2> 
+<a name="d1e212">2.4.5. Smooth Breathing Mark</a> 
+</h2> 
+<a id=""> </a> 
+
+<p> 
+<a id=""> </a>To mark a character with a smooth breathing mark, 
+type a (QWERTY) greater-than before the letter. 
+It must be a letter capable of taking a smooth breathing mark. 
+</p> 
+
+<ul> 
+<a id=""> </a> 
+
+<a id=""> </a> 
+<li>&gt;a gives ἀ</li> 
+
+<a id=""> </a> 
+<li>&gt;e gives ἐ</li> 
+
+<a id=""> </a> 
+<li>&gt;i gives ἰ</li> 
+
+<a id=""> </a> 
+<li>κτλ.</li> 
+</ul> 
+
+<p> 
+<a id=""> </a>The smooth breathing mark is also called the "psili" 
+and sometimes (e.g., in Unicode) the "comma above." 
+</p> 
+
+
+<h2> 
+<a name="d1e230">2.4.6. iota Subscript</a> 
+</h2> 
+<a id=""> </a> 
+
+<p> 
+<a id=""> </a>To mark a character with an iota subscript 
+type a (QWERTY) vertical-bar after the letter. 
+It must be a letter capable of taking an iota subscript. 
+</p> 
+
+<ul> 
+<a id=""> </a> 
+
+<a id=""> </a> 
+<li>a| gives ᾳ</li> 
+
+<a id=""> </a> 
+<li>h| gives ῃ</li> 
+
+<a id=""> </a> 
+<li>v| gives ῳ</li> 
+
+<a id=""> </a> 
+<li>κτλ.</li> 
+</ul> 
+
+<p> 
+<a id=""> </a>The iota subscript is also called the 
+"ypogegrammeni." 
+</p> 
+
+
+<h2> 
+<a name="d1e247">2.4.7. Iota Adscript</a> 
+</h2> 
+<a id=""> </a> 
+
+<p> 
+<a id=""> </a>To mark a character with an Iota adscript 
+type a (QWERTY) vertical-bar after the letter. 
+It must be a letter capable of taking an Iota adscript. 
+</p> 
+
+<ul> 
+<a id=""> </a> 
+
+<a id=""> </a> 
+<li>A| gives ᾼ</li> 
+
+<a id=""> </a> 
+<li>H| gives ῌ</li> 
+
+<a id=""> </a> 
+<li>V| gives ῼ</li> 
+
+<a id=""> </a> 
+<li>κτλ.</li> 
+</ul> 
+
+<p> 
+<a id=""> </a>This produces precomposed Unicode characters such as 
+(in the first example above) 
+U+1FBC "GREEK CAPITAL LETTER ALPHA WITH PROSGEGRAMMENI." 
+How this precomposed character is rendered depends on what is 
+doing the rendering. 
+The Unicode 4.1.0 chart, the glyphs for which are non-normative, 
+shows it as an Α with a tiny iota to the right. 
+Whatever font is being used with vim 6.3 as I type this shows it 
+with a subscript iota. 
+Whatever font is being used with Mozilla 1.7.11 as I view this 
+(it's not clear which font this is), does the same. 
+
+</p> 
+
+<p> 
+<a id=""> </a>To force the display of "ΑΙ" 
+(an adscript Iota done as a full-sized capital on the lettering baseline) 
+you'd have to type "ΑΙ". 
+This would, of course, be encoded as U+0391 U+0399, 
+not as a single precomposed character. 
+This could affect such things as searching and typographic processing. 
+
+</p> 
+
+<p> 
+<a id=""> </a>The iota subscript is also called the 
+"prosgegrammeni." 
+</p> 
+
+
+<h2> 
+<a name="d1e269">2.5. Stacked Diacritical Marks</a> 
+</h2> 
+<a id=""> </a> 
+
+<p> 
+<a id=""> </a>For multiple diacritical marks on the same character: 
+Type the rough/smooth breathing marks first (if they exist), 
+followed by the acute/grave/circumflex accent (if it exists), 
+followed by the letter, 
+followed by the iota adscript (if it exists). 
+
+</p> 
+
+<ul> 
+<a id=""> </a> 
+
+<a id=""> </a> 
+<li>v gives ω</li> 
+
+<a id=""> </a> 
+<li>&lt;v gives ὡ</li> 
+
+<a id=""> </a> 
+<li>&lt;;v gives ὥ</li> 
+
+<a id=""> </a> 
+<li>&lt;;v| gives ᾥ</li> 
+
+<a id=""> </a> 
+<li>κτλ.</li> 
+</ul> 
+
+<p> 
+<a id=""> </a> 
+The vim greek_utf-8 keymap maps specific sequences of 
+typed keystrokes to particular Unicode characters. 
+The order in which they're typed thus does make a difference. 
+This is true both for simple diacritical marks 
+(e.g., type the accent before the character to be accented, 
+or the iota-subscript indicator after) 
+and for stacked-up diacritical marks 
+(e.g., greater-than + semicolon + a gives an acute accented alpha with a 
+smooth breathing mark (ἄ, U+1F04), 
+while semicolon + greater-than + a gives a 
+right-double-pointy-quote followed by an unaccented alpha 
+(U+00bb U+03B1). 
+</p> 
+
+<p> 
+<a id=""> </a> 
+Typing the diacritical mark (e.g., the semicolon for acute accent) 
+followed by a sufficient pause 
+or followed by a character with which it cannot compose 
+will result in the diacritical mark itself. 
+(Exeption: iota subscript (type the vertical bar twice: || gives ͺ); 
+it is not possible to do an iota adscript by itself.) 
+
+</p> 
+
+<p> 
+<a id=""> </a> 
+The results here are in the Unicode "Greek Extended" range 
+(U+1F00 to U+1FFF). 
+(Exception: acute accent (U+0384) 
+
+</p> 
+
+
+<h2> 
+<a name="d1e293">2.6. Common Punctuation</a> 
+</h2> 
+<a id=""> </a> 
+
+
+<h2> 
+<a name="d1e296">2.6.1. Period</a> 
+</h2> 
+<a id=""> </a> 
+
+<p> 
+<a id=""> </a> 
+Use an ordinary ASCII period. 
+It maps to U+002E. 
+
+</p> 
+
+
+<h2> 
+<a name="d1e302">2.6.2. Semicolon/Greek Question Mark</a> 
+</h2> 
+<a id=""> </a> 
+
+<p> 
+<a id=""> </a> 
+U+037E "GREEK QUESTION MARK" 
+("erotimatiko," visually like an ASCII/Latin-1 semicolon) 
+is the unshifted upper-left key 
+(where the "q" is on a QWERTY keyboard). 
+The QWERTY semicolon, 
+if pressed by itself with a pause afterward, 
+or if pressed just before another key with which an acute accent 
+cannot compose, produces an ASCII/Lating-1 semicolon (U+003B) 
+</p> 
+
+
+<h2> 
+<a name="d1e308">2.6.3. Middle Dot</a> 
+</h2> 
+<a id=""> </a> 
+
+<p> 
+<a id=""> </a>This one is easy to type 
+(type either a capital Q or the sequence ";." (semicolon period)). 
+It's harder to explain, though. 
+</p> 
+
+<p> 
+<a id=""> </a>The Unicode 4.1.0 standard calls 
+U+0387 "GREEK ANO TELEIA," 
+but prefers the "middle dot" character U+00B7 from the range 
+U+0080 to U+00FF, "C1 Controls and Latin-1 Supplement" ("Latin-1 Punctuation"). 
+The greek_utf-8 encoding calls it "GREEK ANO TELEIA" 
+and allows two different ways to type it: 
+";." (following the KDE methods) or "W" (following Emacs, 
+but also the Greek keyboard as illustrated above). 
+</p> 
+
+<p> 
+<a id=""> </a>However, greek_utf-8 also calls U+003A (an ASCII colon) 
+"GREEK EPEXIGIMATIKA OR ANO &amp; KATO TELEIA - DEFINITION MISSING FROM UNICODE" 
+(and indeed there is no "epexigimatika or kato teleia in Unicode 4.1.0). 
+It allows this to be typed as a capital Q, 
+which corresponds with the Greek keyboard illustrated above. 
+
+</p> 
+
+
+<h2> 
+<a name="d1e319">2.7. Common Diacritical Marks as Combining Character Sequences</a> 
+</h2> 
+<a id=""> </a> 
+
+<p> 
+<a id=""> </a>To do this we need to enter Greek characters from the ordinary 
+"Greek and Coptic" range (U+0370 to U+03FF) 
+together with diacritical marks from the "Combining Diacritical Marks" range 
+(U+0300 to U+036F). 
+Unfortunately, these latter are not mapped in greek_utf-8. 
+To use them in it 
+means that we need first to enter the ordinary letter as discussed above, 
+and then to enter the diacritical mark or marks using the 
+"CNTRL-V u XXXX" method. 
+
+</p> 
+
+<p> 
+<a id=""> </a>For example, to insert an alpha with an acute accent, I'd do: 
+</p> 
+
+<pre> 
+i&lt;F2&gt;a&lt;CNTL-v&gt;u0301&lt;Esc&gt; 
+
+</pre> 
+
+<p> 
+<a id=""> </a>That is: 
+</p> 
+
+<ul> 
+<a id=""> </a> 
+
+<a id=""> </a> 
+<li>press "i" to get into vi insert mode.</li> 
+
+<a id=""> </a> 
+<li>press the &lt;F2&gt; key to start up the greek_utf-8 keymap 
+(as set up in my $HOME/.vimrc file). 
+</li> 
+
+<a id=""> </a> 
+<li>press "a" to enter the lowercase alpha.</li> 
+
+<a id=""> </a> 
+<li>press the "CONTROL v" key pair.</li> 
+
+<a id=""> </a> 
+<li>press "u" to indicate that the input will be 4 hex digits (u = unicode).</li> 
+
+<a id=""> </a> 
+<li>type 0301 to indicate U+0301, "COMBINING ACUTE ACCENT".</li> 
+
+<a id=""> </a> 
+<li>press the "Escape" key to exit vi insert mode.</li> 
+</ul> 
+
+<p> 
+<a id=""> </a>A pause of indefinite length may occur between the letter and 
+the diacritical mark. 
+Indeed, one can at this point exit insert mode, 
+do something else, come back, 
+and still have the successive characters appear combined. 
+(They are, after all, simply successive characters underneath; 
+the combining is merely a matter of presentation graphics.) 
+
+</p> 
+
+<p> 
+<a id=""> </a>I have created a modified version of this keymap 
+</p> 
+
+<p> 
+<a id=""> </a> 
+
+<a href="https://circuitousroot.com/language/computer/greek-prosody_utf-8.vim">greek-prosody_utf-8.vim</a> 
+</p> 
+
+<p> 
+<a id=""> </a>which includes these combining characters. 
+</p> 
+
+<p> 
+<a id=""> </a>The Unicode standard 
+allows any sequence of characters 
+but also indicates that when multiple combining diacritical 
+marks can interact with each other typographically that 
+order can be important. 
+Conveniently, it gives as an example the 
+Greek acute accent and smooth breathing mark ("COMMA ABOVE"). 
+In this case, since the marks do not stack vertically 
+but instead combine horizontally with the breathing mark first, 
+the breathing mark must come first in the sequence. 
+Thus the first example below is correct, while the second is not: 
+</p> 
+
+<pre> 
+U+03B1 U+0314 U+0301 gives: ἅ 
+U+03B1 U+0301 U+0314 gives: ά̔ 
+
+</pre> 
+
+<p> 
+<a id=""> </a>Note: My mozilla isn't rendering these properly, but vim/xterm is. 
+Here's an image from a screen-grab from vim/xterm: 
+</p> 
+
+<img src="vi%20greek_utf-8.vim%20keymap_files/combining-diacritics.png" alt="Order of Combining Diacritical Marks Example" width="22" height="31"> 
+<p>Order of Combining Diacritical Marks Example</p> 
+
+<p> 
+<a id=""> </a>The diacritical marks of interest are, as noted 
+in the Unicode section: 
+</p> 
+
+<ul> 
+<a id=""> </a> 
+
+<a id=""> </a> 
+<li>U_002B ++ the plus sign by itself</li> 
+
+<a id=""> </a> 
+<li>U+0300 +` COMBINING GRAVE ACCENT ("varia")</li> 
+
+<a id=""> </a> 
+<li>U+0301 +; COMBINING ACUTE ACCENT ("oxia," "tonos")</li> 
+
+<a id=""> </a> 
+<li>U+0304 +- COMBINING MACRON ("long")</li> 
+
+<a id=""> </a> 
+<li>U+0306 -^ COMBINING BREVE ("short")</li> 
+
+<a id=""> </a> 
+<li>U+0308 -: COMBINING DIAERESIS ("dialytika," "double-dot above," "umlaut")</li> 
+
+<a id=""> </a> 
+<li>U+0313 +&gt; COMBINING COMMA ABOVE ("psili," "smooth breathing mark")</li> 
+
+<a id=""> </a> 
+<li>U+0314 +&lt; COMBINING REVERSED COMMA ABOVE ("dasia," "rough breathing mark")</li> 
+
+<a id=""> </a> 
+<li>U+0342 +~ COMBINING GREEK PERISPOMENI ("circumflex," "tilde," "inverted breve")</li> 
+
+<a id=""> </a> 
+<li>U+0345 +| COMBINING GREEK YPOGEGRAMMENI ("iota subscript")</li> 
+</ul> 
+
+<p> 
+<a id=""> </a>(See the Unicode section earlier, or the Unicode standard, 
+for notes on U+0302, U+0303, U+0343, and U+0344.) 
+</p> 
+
+<p> 
+<a id=""> </a>Final problem: 
+vim supports only two combining diacritical marks. 
+Sometimes we need three 
+(e.g., eta, breathing, accent, and iota subscript). 
+For example: 
+
+</p> 
+
+<pre> 
+U+03B7 η 
+U+03B7 U+0314 ἡ 
+U+03B7 U+0314 U+0301 ἥ 
+U+03B7 U+0314 U+0345 ᾑ 
+U+03B7 U+0314 U+0301 U+0345 ᾕ 
+
+</pre> 
+
+<p> 
+<a id=""> </a>My vim presently shows: 
+</p> 
+
+<img src="vi%20greek_utf-8.vim%20keymap_files/combining-diacritics-3-vim.png" alt="Combining Three Diacritical Marks in vim" width="188" height="74"> 
+<p>Combining Three Diacritical Marks in vim</p> 
+
+<p> 
+<a id=""> </a>That is, the final version with three diacritical marks does not 
+show the last one at all. 
+</p> 
+
+<p> 
+<a id=""> </a>By way of contrast, my mozilla presently shows: 
+</p> 
+
+<img src="vi%20greek_utf-8.vim%20keymap_files/combining-diacritics-3-moz.png" alt="Combining Three Diacritical Marks in Mozilla" width="221" height="92"> 
+<p>Combining Three Diacritical Marks in Mozilla</p> 
+
+<p> 
+<a id=""> </a>That is, it shows the iota subscript, but shows it spaced over to 
+the next character position rather than as a subscript. 
+</p> 
+
+<p> 
+<a id=""> </a>So the diacritical marks have been entered in this way, 
+and are there in the file; 
+they're just invisible. 
+</p> 
+
+
+<h2> 
+<a name="d1e420">2.8. Uncommon Diacritical Marks as Precomposed Characters</a> 
+</h2> 
+<a id=""> </a> 
+
+
+<h2> 
+<a name="d1e423">2.8.1. Macron</a> 
+</h2> 
+<a id=""> </a> 
+
+<p> 
+<a id=""> </a> 
+Type a hyphen (minus sign) before a letter which can take a macron. 
+
+</p> 
+
+<p> 
+<a id=""> </a>The macron is also called (or is) the "long" mark. 
+A phonetician would probably use a colon suffixed. 
+</p> 
+
+
+<h2> 
+<a name="d1e431">2.8.2. Vraxy</a> 
+</h2> 
+<a id=""> </a> 
+
+<p> 
+<a id=""> </a> 
+Type a carat (shift-6) before a letter which can take a vraxy. 
+
+</p> 
+
+<p> 
+<a id=""> </a>The greek_utf-8 keymap 
+calls this "braxy"; also "breve." 
+It's the "short" mark. 
+</p> 
+
+
+<h2> 
+<a name="d1e439">2.8.3. Dialytika/Diaeresis</a> 
+</h2> 
+<a id=""> </a> 
+
+<p> 
+<a id=""> </a> 
+The QWERTY colon produces a "diaeresis" 
+(double-dot-above, "umlaut"). 
+It does so either by itself 
+(as U+00A8, "DIAERESIS" from the Unicode range U+0080 to U+00FF, 
+"C1 Controls and Latin-1 Supplement" ("Latin-1 Punctuation")), 
+or precombined in the "Greek and Coptic" (not "Greek Extended") range 
+(with acute, grave, and modern Greek accents). 
+
+</p> 
+
+
+<h2> 
+<a name="d1e446">2.9. Uncommon Diacritical Marks as Combining Character Sequences</a> 
+</h2> 
+<a id=""> </a> 
+
+<p> 
+<a id=""> </a>(Use the same methods as discussed above for common diacritical marks.) 
+</p> 
+
+
+<h2> 
+<a name="d1e452">2.10. Archaic Characters</a> 
+</h2> 
+<a id=""> </a> 
+
+<ul> 
+<a id=""> </a> 
+
+<a id=""> </a> 
+<li>stigma: #ST Ϛ</li> 
+
+<a id=""> </a> 
+<li>sampi: #SP Ϡ</li> 
+
+<a id=""> </a> 
+<li>digamma: #G Ϝ </li> 
+
+<a id=""> </a> 
+<li>qoppa: #Q #q Ϙ ϙ</li> 
+</ul> 
+
+<p> 
+<a id=""> </a>Note: 
+The character which looks like a large letter T with "hands" on the 
+ends of its arms 
+is "archaic sampi." 
+It is not in Unicode. 
+
+</p> 
+
+
+<h2> 
+<a name="d1e467">2.11. Characters Not in the greek_utf-8 keymap</a> 
+</h2> 
+<a id=""> </a> 
+
+<p> 
+<a id=""> </a>The keymap does not include 
+characters in the ranges: 
+</p> 
+
+<ul> 
+<a id=""> </a> 
+
+<a id=""> </a> 
+<li>Range: U+1DC0 to 1DEF "Combining Diacritical Marks Supplement" 
+(two dotted accents) 
+</li> 
+
+<a id=""> </a> 
+<li>Range: U+2E00 to U+2E7F "Supplemental Punctuation" 
+(ancient Greek textual/editorial symbols) 
+</li> 
+
+<a id=""> </a> 
+<li>Range: U+10140 to U+1018F "Ancient Greek Numbers"</li> 
+
+<a id=""> </a> 
+<li>Range: U+1D000 to U+1D0FF "Byzantine Musical Symbols"</li> 
+
+<a id=""> </a> 
+<li>Range: U+1D200 to U+1D24F "Ancient Greek Musical Notation"</li> 
+</ul> 
+
+<p> 
+<a id=""> </a>None of the keymaps distributed with vim 6.3 include these. 
+I haven't yet written keymaps for them. 
+
+</p> 
+ 
+
+
+<div class="broadside"> 
+<div class="legal-matters">The image of a Greek keyboard 
+mapping from Wikipedia is in copyright and is 
+used here under its Creative Commons license. 
+
+<p>All portions of this document not noted otherwise are Copyright © 2006 
+by David M. MacMillan and Rollande Krandall. 
+</p> 
+
+<p>Circuitous Root is a Registered Trademark 
+of David M. MacMillan and Rollande Krandall. 
+</p> 
+
+<p>This work is licensed under the 
+Creative Commons "Attribution - ShareAlike" license. 
+See 
+
+<a href="http://creativecommons.org/licenses/by-sa/3.0/"> 
+http://creativecommons.org/licenses/by-sa/3.0/ 
+</a> 
+for its terms. 
+</p> 
+
+<p>Linux is a registered trademark of 
+Linus Torvalds. 
+</p> 
+
+<p>SuSE is a registered trademark of 
+Novell Corporation. 
+</p> 
+
+<p>Unicode is a registered trademark of 
+The Unicode Consortium. 
+</p> 
+
+<p>Presented originally by 
+Circuitous Root® 
+</p> 
+
+</div> 
+</div> 
+
+<div class="broadside"> 
+<p> 
+<a href="https://circuitousroot.com/language/computer/about-the-images.html">About the images</a> 
+</p> 
+</div> 
+
+
+<hr> 
+<div class="standard-links"> 
+<div class="standard-linking-image"> 
+<a href="https://circuitousroot.com/index.html"> 
+Home 
+<br><br> 
+<img src="vi%20greek_utf-8.vim%20keymap_files/link-home-sf0.jpg" alt="Link to Home Page" width="128" height="96"> 
+</a> 
+</div> 
+<div class="standard-linking-image"> 
+<a href="https://circuitousroot.com/language/index.html"> 
+Category 
+<br><br> 
+<img src="vi%20greek_utf-8.vim%20keymap_files/link-topic-sf0_002.jpg" alt="Link to Category Page" width="128" height="151"> 
+</a> 
+</div> 
+<div class="standard-linking-image"> 
+<a href="https://circuitousroot.com/language/computer/index.html"> 
+Topic 
+<br><br> 
+<img src="vi%20greek_utf-8.vim%20keymap_files/link-topic-sf0.jpg" alt="Link to Topic Page" width="128" height="214"> 
+</a> 
+</div> 
+<div class="standard-linking-image"> 
+<a href="https://circuitousroot.com/language/index.html"> 
+Up 
+<br><br> 
+<img src="vi%20greek_utf-8.vim%20keymap_files/link-topic-sf0_002.jpg" alt="Link Up" width="128" height="151"> 
+</a> 
+</div> 
+</div> 
+<div class="broadside"> 
+<p>Select 
+
+<a href="https://circuitousroot.com/about-resolution.html">Resolution</a>: 
+0 [other resolutions temporarily disabled due to lack of disk space] 
+</p> 
+</div> 
+
+ 
+</body></html>
